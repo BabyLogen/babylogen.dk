@@ -18,7 +18,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "deploy": "gh-pages -d dist -r git@github.com:BabyLogen/babylogen.github.io.git -b master"
+    "deploy": "gh-pages -d dist -r git@github.com:BabyLogen/babylogen.github.io.git -b master --dotfiles"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
