@@ -6,4 +6,4 @@
 .animate-background { transition-property: background; }
 .animate-border { transition-property: border; }
 .animate-transform { transition-property: transform; }
-.animate-height { transition-property: height; }
+.animate-all { transition-property: all; }

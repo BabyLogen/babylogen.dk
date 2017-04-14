@@ -4,13 +4,10 @@
     align="bottom"
     :class="{ collapse: scrollPosition > 200 }"
   >
-    <grid-column xs="4">
-      <nuxt-link to="/">
-        <img src="/images/logo-icon.svg" class="animate-ease animate-fast animate-height logo-icon" />
-        <img src="/images/logo.svg" class="animate-ease animate-fast animate-height margin-left-1 logo" />
-      </nuxt-link>
+    <grid-column xs="6">
+      <nav-link to="/" class="animate-ease animate-fast animate-all logo">BabyLogen</nav-link>
     </grid-column>
-    <grid-column xs="8" class="margin-right-neg-1 right">
+    <grid-column xs="6" class="margin-right-neg-1 right">
       <nav-link to="/om-os/">Om os</nav-link>
       <nav-link to="/events/">Events</nav-link>
       <nav-link to="/ydelser/">Ydelser</nav-link>
@@ -56,14 +53,15 @@ export default {
     transform: translateZ(0);
     z-index: 100;
   }
-  .logo-icon {
-    height: 5rem;
+  .logo.nuxt-link-active {
+    font-size: 4rem;
+    border-color: var(--color-white);
   }
-  .logo {
-    height: 2rem;
+  .logo.nuxt-link-active:hover {
+    border-color: var(--color-grey-75);
   }
 
-  .collapse .logo-icon, .collapse .logo {
-    height: 1rem;
+  .collapse .logo {
+    font-size: 1rem;
   }
 </style>

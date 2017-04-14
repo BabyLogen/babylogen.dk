@@ -22,7 +22,7 @@ export default {
 <style>
 .container
 {
-  min-height: 100vh;
+  min-height: 2000px;
   display: flex;
   justify-content: center;
   align-items: center;
