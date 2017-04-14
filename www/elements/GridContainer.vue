@@ -1,5 +1,5 @@
 <template>
-  <div class="flex wrap width-100 grid-container" :class="classes">
+  <div class="flex wrap width-100 Grid-container" :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style>
-  .grid-container {
+  .Grid-container {
     padding-left: 3rem;
     padding-right: 3rem;
   }

@@ -1,11 +1,11 @@
 <template>
   <grid-container
-    class="fixed bg-white width-100 navigation"
+    class="fixed bg-white width-100 Navigation"
     align="bottom"
-    :class="{ collapse: scrollPosition > 200 }"
+    :class="{ 'Navigation--collapse': scrollPosition > 200 }"
   >
     <grid-column xs="6">
-      <nav-link to="/" class="animate-ease animate-fast animate-all logo">BabyLogen</nav-link>
+      <nav-link to="/" class="animate-ease animate-fast animate-all Navigation-logo">BabyLogen</nav-link>
     </grid-column>
     <grid-column xs="6" class="margin-right-neg-1 right">
       <nav-link to="/om-os/">Om os</nav-link>
@@ -49,24 +49,24 @@ export default {
 </script>
 
 <style>
-  .navigation {
+  .Navigation {
     padding-top: 1rem;
     padding-bottom: 1rem;
     transform: translateZ(0);
     z-index: 100;
   }
-  .logo {
+  .Navigation-logo {
     font-size: 4rem;
     font-weight: 300;
   }
-  .logo.nuxt-link-active {
+  .Navigation-logo.nuxt-link-active {
     border-color: var(--color-white);
   }
-  .logo.nuxt-link-active:hover {
+  .Navigation-logo.nuxt-link-active:hover {
     border-color: var(--color-grey-75);
   }
 
-  .collapse .logo {
+  .Navigation--collapse .Navigation-logo {
     font-size: 1rem;
     font-weight: 700;
   }
