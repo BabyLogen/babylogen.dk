@@ -13,7 +13,9 @@
       <nav-link to="/ydelser/">Ydelser</nav-link>
       <nav-link to="/blog/">Blog</nav-link>
       <nav-link to="/shop/">Shop</nav-link>
-      <nav-link to="/kurv/">Kurv</nav-link>
+      <nav-link to="/kurv/" class="margin-left-1">
+        <span class="Navigation-basket">Kurv (0)</span>
+      </nav-link>
     </grid-column>
   </grid-container>
 </template>
@@ -67,5 +69,10 @@ export default {
   .collapse .logo {
     font-size: 1rem;
     font-weight: 700;
+  }
+  .Navigation-basket {
+    background-color: var(--color-primary);
+    margin: -12px -1rem;
+    padding: 12px 1rem;
   }
 </style>
