@@ -1,0 +1,9 @@
+.animate-ease { transition-timing-function: cubic-bezier(.5,0,.1,1) }
+.animate-fast { transition-duration: 0.25s }
+.animate-medium { transition-duration: 0.75s }
+.animate-slow { transition-duration: 1s }
+.animate-opacity { transition-property: opacity; }
+.animate-background { transition-property: background; }
+.animate-border { transition-property: border; }
+.animate-transform { transition-property: transform; }
+.animate-height { transition-property: height; }

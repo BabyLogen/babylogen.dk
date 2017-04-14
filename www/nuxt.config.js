@@ -7,16 +7,29 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
   },
+  /*
+  ** Global css
+  */
+  css: [
+    '~assets/css/vars.css',
+    '~assets/css/main.css',
+    '~assets/css/color.css',
+    '~assets/css/grid.css',
+    '~assets/css/layout.css',
+    '~assets/css/spacing.css',
+    '~assets/css/transition.css',
+    '~assets/css/typography.css',
+  ],
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#7DFAD3' },
   /*
   ** Build configuration
   */
@@ -24,15 +37,15 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
       if (ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+          exclude: /(node_modules)/,
+        });
       }
-    }
-  }
-}
+    },
+  },
+};
