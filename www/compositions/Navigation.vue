@@ -53,8 +53,11 @@ export default {
     transform: translateZ(0);
     z-index: 100;
   }
-  .logo.nuxt-link-active {
+  .logo {
     font-size: 4rem;
+    font-weight: 300;
+  }
+  .logo.nuxt-link-active {
     border-color: var(--color-white);
   }
   .logo.nuxt-link-active:hover {
@@ -63,5 +66,6 @@ export default {
 
   .collapse .logo {
     font-size: 1rem;
+    font-weight: 700;
   }
 </style>
