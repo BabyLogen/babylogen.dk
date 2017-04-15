@@ -1,5 +1,5 @@
 <template>
-  <div class="flex wrap width-100 Grid-container" :class="classes">
+  <div class="flex wrap width-100 middle Grid-container" :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -9,14 +9,13 @@ export default {
   props: {
     align: {
       type: String,
-      default: 'top',
       validator(v) { return ['top', 'middle', 'bottom'].some(pos => pos === v); },
     },
   },
   computed: {
     classes() {
       let c = '';
-      c += ` flex-${this.align}`;
+      c += this.align ? ` flex-${this.align}` : '';
 
       return c;
     },
@@ -28,6 +27,7 @@ export default {
   .Grid-container {
     padding-left: 1rem;
     padding-right: 1rem;
+    max-width: 1600px;
   }
   @media (min-width: 768px) {
     .Grid-container {

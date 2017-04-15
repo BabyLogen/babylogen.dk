@@ -21,6 +21,7 @@ module.exports = {
     '~assets/css/main.css',
     '~assets/css/color.css',
     '~assets/css/grid.css',
+    '~assets/css/image.css',
     '~assets/css/layout.css',
     '~assets/css/responsive.css',
     '~assets/css/spacing.css',

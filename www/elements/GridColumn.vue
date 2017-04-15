@@ -50,6 +50,22 @@ export default {
       type: String,
       validator: validate({ min: 0, max: 11 }),
     },
+    moveXs: {
+      type: String,
+      validator(v) { return ['left', 'right', 'none'].some(pos => pos === v); },
+    },
+    moveSm: {
+      type: String,
+      validator(v) { return ['left', 'right', 'none'].some(pos => pos === v); },
+    },
+    moveMd: {
+      type: String,
+      validator(v) { return ['left', 'right', 'none'].some(pos => pos === v); },
+    },
+    moveLg: {
+      type: String,
+      validator(v) { return ['left', 'right', 'none'].some(pos => pos === v); },
+    },
     align: {
       type: String,
       validator(v) { return ['top', 'middle', 'bottom'].some(pos => pos === v); },
@@ -63,6 +79,10 @@ export default {
       c += this.md ? ` width-${this.md}-md` : '';
       c += this.lg ? ` width-${this.lg}-lg` : '';
       c += this.align ? ` col-${this.align}` : '';
+      c += this.moveXs ? ` ${this.moveXs}-xs` : '';
+      c += this.moveSm ? ` ${this.moveSm}-sm` : '';
+      c += this.moveMd ? ` ${this.moveMd}-md` : '';
+      c += this.moveLg ? ` ${this.moveLg}-lg` : '';
 
       return c;
     },
@@ -98,6 +118,9 @@ export default {
 .offset-9-xs { margin-left: 75%; }
 .offset-10-xs { margin-left: 83.33%; }
 .offset-11-xs { margin-left: 91.67%; }
+.left-xs { order: -1; }
+.right-xs { order: 1; }
+.none-xs { order: 0; }
 
 @media (min-width: 768px) {
   .width-fit-sm { flex: 1 0 auto; }
@@ -126,6 +149,9 @@ export default {
   .offset-9-sm { margin-left: 75%; }
   .offset-10-sm { margin-left: 83.33%; }
   .offset-11-sm { margin-left: 91.67%; }
+  .left-sm { order: -1; }
+  .right-sm { order: 1; }
+  .none-sm { order: 0; }
 }
 
 @media (min-width: 992px) {
@@ -155,6 +181,9 @@ export default {
   .offset-9-md { margin-left: 75%; }
   .offset-10-md { margin-left: 83.33%; }
   .offset-11-md { margin-left: 91.67%; }
+  .left-md { order: -1; }
+  .right-md { order: 1; }
+  .none-md { order: 0; }
 }
 
 @media (min-width: 1200px) {
@@ -184,5 +213,8 @@ export default {
   .offset-9-lg { margin-left: 75%; }
   .offset-10-lg { margin-left: 83.33%; }
   .offset-11-lg { margin-left: 91.67%; }
+  .left-lg { order: -1; }
+  .right-lg { order: 1; }
+  .none-lg { order: 0; }
 }
 </style>

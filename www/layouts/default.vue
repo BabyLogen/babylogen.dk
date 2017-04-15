@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="Page">
     <navigation />
     <nuxt/>
   </div>
@@ -16,4 +16,7 @@ export default {
 </script>
 
 <style>
+  .Page {
+    padding-top: 10rem;
+  }
 </style>

@@ -1,52 +1,23 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        FORSIDE
-      </h1>
-    </div>
+  <section>
+    <banner imageSrc="/images/frontpage-banner.jpg">
+      Få kompetent og ærlig vejledning af specialister før, under og efter graviditeten.<br>
+      <custom-button>Læs mere</custom-button>
+    </banner>
   </section>
 </template>
 
 <script>
-import Logo from '../components/Logo.vue';
+import Banner from '../compositions/Banner.vue';
+import CustomButton from '../elements/CustomButton.vue';
 
 export default {
   components: {
-    Logo,
+    Banner,
+    CustomButton,
   },
 };
 </script>
 
 <style>
-.container
-{
-  min-height: 2000px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links
-{
-  padding-top: 15px;
-}
 </style>
