@@ -25,10 +25,13 @@ export default {
     padding: 1rem 1rem 12px;
   }
   .Nav-link {
-    border-bottom: 4px solid var(--color-white);
+    border-bottom: 4px solid transparent;
   }
   .Nav-link:hover {
     border-bottom-color: var(--color-grey-75);
+  }
+  .touch .Nav-link:hover {
+    border-bottom-color: transparent;
   }
   .Nav-link:active, .Nav-link:focus, .nuxt-link-active, .nuxt-link-active:hover {
     border-bottom-color: var(--color-primary);

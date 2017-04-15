@@ -2,7 +2,7 @@
   <section>
     <banner imageSrc="/images/frontpage-banner.jpg">
       Få kompetent og ærlig vejledning af specialister før, under og efter graviditeten.<br>
-      <custom-button>Læs mere</custom-button>
+      <custom-button to="/om-os/">Læs mere</custom-button>
     </banner>
   </section>
 </template>

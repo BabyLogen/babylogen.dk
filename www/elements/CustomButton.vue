@@ -1,7 +1,7 @@
 <template>
-  <button class="padding-vertical-05 padding-horizontal-2 pointer bold caps CustomButton" :class="classes">
+  <nuxt-link v-bind:to="to" class="no-text-decoration padding-vertical-05 padding-horizontal-2 pointer bold caps CustomButton" :class="classes">
     <slot></slot>
-  </button>
+  </nuxt-link>
 </template>
 
 <script>
@@ -12,11 +12,14 @@ export default {
       default: 'ghost',
       validator(v) { return ['ghost', 'primary', 'black'].some(type => type === v); },
     },
+    to: {
+      type: String,
+    },
   },
   computed: {
     classes() {
       let c = '';
-      c += this.type === 'ghost' ? ' border border-black bg-transparent CustomButton--ghost' : '';
+      c += this.type === 'ghost' ? ' black border border-black bg-transparent CustomButton--ghost' : '';
 
       return c;
     },

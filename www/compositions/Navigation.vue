@@ -20,7 +20,7 @@
           <span class="border border-grey-75 Navigation-menu">{{open ? 'Luk' : 'Menu'}}</span>
         </nav-link>
       </grid-column>
-      <grid-column xs="12" class="hide-md padding-top-3" :class="{ hidden: !open }">
+      <grid-column xs="12" class="hide-md padding-top-1" :class="{ hidden: !open }">
         <div class="center margin-vertical-3"><nav-link v-on:click.native="closeNavigation" to="/om-os/">Om os</nav-link></div>
         <div class="center margin-vertical-3"><nav-link v-on:click.native="closeNavigation" to="/events/">Events</nav-link></div>
         <div class="center margin-vertical-3"><nav-link v-on:click.native="closeNavigation" to="/ydelser/">Ydelser</nav-link></div>
@@ -73,16 +73,10 @@ export default {
 
 <style>
   .Navigation {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     transform: translateZ(0);
     z-index: 100;
-  }
-
-  @media (min-width: 768px) {
-    .Navigation-logo {
-      font-size: 2rem;
-    }
   }
   .Navigation-logo.nuxt-link-active,
   .Navigation-logo.nuxt-link-active:focus,
@@ -111,5 +105,15 @@ export default {
   .Navigation-menu {
     margin: -12px -1rem -12px -1rem;
     padding: 12px 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .Navigation {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    .Navigation-logo {
+      font-size: 2rem;
+    }
   }
 </style>

@@ -50,4 +50,7 @@ module.exports = {
       }
     },
   },
+  plugins: [
+    { src: '~/plugins/detect-touch', ssr: false },
+  ],
 };

@@ -16,7 +16,9 @@ export default {
 </script>
 
 <style>
-  .Page {
-    padding-top: 10rem;
+  .Page { padding-top: 4.5rem; }
+
+  @media (min-width: 768px) {
+    .Page { padding-top: 11.5rem; }
   }
 </style>
