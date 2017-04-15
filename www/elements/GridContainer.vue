@@ -26,7 +26,25 @@ export default {
 
 <style>
   .Grid-container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @media (min-width: 768px) {
+    .Grid-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  @media (min-width: 992px) {
+    .Grid-container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .Grid-container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
   }
 </style>

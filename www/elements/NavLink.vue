@@ -1,10 +1,17 @@
 <template>
   <nuxt-link
+    v-if="to"
     v-bind:to="to"
     class="black no-text-decoration bold caps padding-1 animate-ease animate-fast animate-border Nav-link"
   >
     <slot></slot>
   </nuxt-link>
+  <span
+    v-else
+    class="pointer black no-text-decoration bold caps padding-1 animate-ease animate-fast animate-border Nav-link"
+  >
+    <slot></slot>
+  </span>
 </template>
 
 <script>
@@ -17,7 +24,7 @@ export default {
   .Nav-link {
     padding: 1rem 1rem 12px;
   }
-  .Nav-link {
+  .Nav-link, .Nav-link:focus {
     border-bottom: 4px solid var(--color-white);
   }
   .Nav-link:hover {

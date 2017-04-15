@@ -5,8 +5,11 @@
 </template>
 
 <script>
-function validate({ min = 1, max = 12 }) {
+function validate({ min = 1, max = 12, exceptions = [] }) {
   return (v) => {
+    if (exceptions.some(exception => exception === v)) {
+      return true;
+    }
     const i = parseInt(v, 10);
     return !isNaN(i) && v >= min && v <= max;
   };
@@ -16,20 +19,20 @@ export default {
   props: {
     xs: {
       type: String,
-      default: '12',
-      validator: validate({ min: 1, max: 12 }),
+      default: 'fit',
+      validator: validate({ min: 0, max: 12, exceptions: ['expand', 'fit'] }),
     },
     sm: {
       type: String,
-      validator: validate({ min: 1, max: 12 }),
+      validator: validate({ min: 0, max: 12, exceptions: ['expand', 'fit'] }),
     },
     md: {
       type: String,
-      validator: validate({ min: 1, max: 12 }),
+      validator: validate({ min: 0, max: 12, exceptions: ['expand', 'fit'] }),
     },
     lg: {
       type: String,
-      validator: validate({ min: 1, max: 12 }),
+      validator: validate({ min: 0, max: 12, exceptions: ['expand', 'fit'] }),
     },
     offsetXs: {
       type: String,
@@ -69,7 +72,8 @@ export default {
 
 <style>
 /* Width */
-.width-0-xs { flex: 1; }
+.width-fit-xs { flex: 1 0 auto; }
+.width-expand-xs { flex: 0 0 auto; }
 .width-1-xs { flex: 0 0 8.33%; }
 .width-2-xs { flex: 0 0 16.67%; }
 .width-3-xs { flex: 0 0 25%; }
@@ -96,7 +100,8 @@ export default {
 .offset-11-xs { margin-left: 91.67%; }
 
 @media (min-width: 768px) {
-  .width-0-sm { flex: 1; }
+  .width-fit-sm { flex: 1 0 auto; }
+  .width-expand-sm { flex: 0 0 auto; }
   .width-1-sm { flex: 0 0 8.33%; }
   .width-2-sm { flex: 0 0 16.67%; }
   .width-3-sm { flex: 0 0 25%; }
@@ -124,7 +129,8 @@ export default {
 }
 
 @media (min-width: 992px) {
-  .width-0-md { flex: 1; }
+  .width-fit-md { flex: 1 0 auto; }
+  .width-expand-md { flex: 0 0 auto; }
   .width-1-md { flex: 0 0 8.33%; }
   .width-2-md { flex: 0 0 16.67%; }
   .width-3-md { flex: 0 0 25%; }
@@ -152,7 +158,8 @@ export default {
 }
 
 @media (min-width: 1200px) {
-  .width-0-lg { flex: 1; }
+  .width-fit-lg { flex: 1 0 auto; }
+  .width-expand-lg { flex: 0 0 auto; }
   .width-1-lg { flex: 0 0 8.33%; }
   .width-2-lg { flex: 0 0 16.67%; }
   .width-3-lg { flex: 0 0 25%; }

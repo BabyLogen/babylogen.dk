@@ -12,3 +12,5 @@
 .bg-grey-85 { background-color: var(--color-grey-85); }
 .bg-grey-80 { background-color: var(--color-grey-80); }
 .bg-grey-75 { background-color: var(--color-grey-75); }
+
+.border-grey-75 { border-color: var(--color-grey-75); }

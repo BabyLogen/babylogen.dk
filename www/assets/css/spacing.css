@@ -4,12 +4,22 @@
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+.padding-top-3 {
+  padding-top: 3rem;
+}
 
 /* Margin */
 
 .margin-right-neg-1 {
   margin-right: -1rem;
 }
+.margin-left-neg-1 {
+  margin-left: -1rem;
+}
 .margin-left-1 {
   margin-left: 1rem;
+}
+.margin-vertical-3 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }

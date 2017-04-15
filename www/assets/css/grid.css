@@ -10,7 +10,3 @@
 .col-top { align-self: flex-start; }
 .col-middle { align-self: center; }
 .col-bottom { align-self: flex-end; }
-
-/* Size */
-.expand { flex: 1 0 auto; }
-.fit { flex: 0 0 auto; }
