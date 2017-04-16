@@ -8,8 +8,9 @@
     "node": "latest"
   },
   "dependencies": {
-    "nuxt": "latest",
-    "gh-pages": "latest"
+    "contentful": "latest",
+    "gh-pages": "latest",
+    "nuxt": "latest"
   },
   "scripts": {
     "dev": "nuxt",

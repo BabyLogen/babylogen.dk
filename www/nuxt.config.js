@@ -50,6 +50,7 @@ module.exports = {
       }
     },
   },
+  vendor: ['contentful'],
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
   ],
