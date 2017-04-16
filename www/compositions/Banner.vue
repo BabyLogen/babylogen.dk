@@ -4,7 +4,7 @@
       xs="12"
       md="fit"
       class="background-image cover Banner-image"
-      v-bind:style="{ 'background-image': `url(${imageSrc}?fm=jpg&q=80&fl=progressive&w=1000)` }"
+      v-bind:style="{ 'background-image': `url(${imageUrl}?fm=jpg&q=80&fl=progressive&w=1000)` }"
     >
     </grid-column>
     <grid-column
@@ -13,7 +13,8 @@
       move-md="left"
       class="bg-primary caps light Banner-text"
     >
-      <slot></slot>
+      {{text}}<br>
+      <custom-button to="/om-os/">{{buttonText}}</custom-button>
     </grid-column>
   </grid-container>
 </template>
@@ -21,17 +22,15 @@
 <script>
 import GridContainer from '../elements/GridContainer.vue';
 import GridColumn from '../elements/GridColumn.vue';
+import CustomButton from '../elements/CustomButton.vue';
 
 export default {
   components: {
     GridContainer,
     GridColumn,
+    CustomButton,
   },
-  props: {
-    imageSrc: {
-      type: String,
-    },
-  },
+  props: ['buttonText', 'imageUrl', 'text'],
 };
 </script>
 

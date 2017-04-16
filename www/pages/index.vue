@@ -1,13 +1,18 @@
 <template>
-  <section>
-    <banner v-bind:imageSrc="sections[0].fields.image.fields.file.url">
-      {{sections[0].fields.text}}<br>
-      <custom-button to="/om-os/">{{sections[0].fields.buttonText}}</custom-button>
-    </banner>
-  </section>
+  <div>
+    <section v-for="section in page.sections">
+      <banner
+        v-if="section.sys.contentType.sys.id === 'banner'"
+        v-bind:image-url="section.fields.image.fields.file.url"
+        v-bind:text="section.fields.text"
+        v-bind:button-text="section.fields.buttonText"
+      />
+    </section>
+  </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Banner from '../compositions/Banner.vue';
 import CustomButton from '../elements/CustomButton.vue';
 import contentfulClient from '../assets/js/contentful-client';
@@ -17,28 +22,22 @@ export default {
     Banner,
     CustomButton,
   },
+  computed: mapState(['meta', 'page']),
   head() {
     return {
-      title: this.$store.state.title,
+      title: this.meta.title,
       meta: [
-        { hid: 'description', name: 'description', content: this.$store.state.title },
+        { hid: 'description', name: 'description', content: this.meta.description },
       ],
     };
-  },
-  asyncData() {
-    return contentfulClient
-      .getEntries({ 'sys.id': '6vxDOeYLjqmm0aaa2mm8eC' })
-      .then((response) => {
-        const fields = response.items[0].fields;
-        return fields;
-      });
   },
   fetch({ store }) {
     return contentfulClient
       .getEntries({ 'sys.id': '6vxDOeYLjqmm0aaa2mm8eC' })
       .then((response) => {
         const fields = response.items[0].fields;
-        store.commit('setMeta', fields);
+        store.commit('meta/set', fields);
+        store.commit('page/setSections', fields.sections);
       });
   },
 };
