@@ -4,7 +4,7 @@
       xs="12"
       md="fit"
       class="background-image cover Banner-image"
-      v-bind:style="{ 'background-image': `url(${imageSrc})` }"
+      v-bind:style="{ 'background-image': `url(${imageSrc}?fm=jpg&q=80&fl=progressive&w=1000)` }"
     >
     </grid-column>
     <grid-column

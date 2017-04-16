@@ -17,24 +17,29 @@ export default {
     Banner,
     CustomButton,
   },
-  data() {
-    return {
-      title: 'Hello World!',
-      description: 'Hello World!',
-    };
-  },
   head() {
     return {
-      title: `${this.title} | BabyLogen`,
+      title: this.$store.state.title,
       meta: [
-        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'description', name: 'description', content: this.$store.state.title },
       ],
     };
   },
   asyncData() {
     return contentfulClient
       .getEntries({ 'sys.id': '6vxDOeYLjqmm0aaa2mm8eC' })
-      .then(response => response.items[0].fields);
+      .then((response) => {
+        const fields = response.items[0].fields;
+        return fields;
+      });
+  },
+  fetch({ store }) {
+    return contentfulClient
+      .getEntries({ 'sys.id': '6vxDOeYLjqmm0aaa2mm8eC' })
+      .then((response) => {
+        const fields = response.items[0].fields;
+        store.commit('setMeta', fields);
+      });
   },
 };
 </script>

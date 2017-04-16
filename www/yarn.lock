@@ -1227,7 +1227,7 @@ contentful-sdk-core@^3.8.0:
     npmlog "^4.0.2"
     qs "^6.1.0"
 
-contentful@^4.1.2:
+contentful@latest:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/contentful/-/contentful-4.1.2.tgz#5a02e02b694fce860de657122e7c49b96046eca5"
   dependencies:
