@@ -1,3 +1,5 @@
+const contentfulClient = require('./assets/js/contentful-client');
+
 module.exports = {
   /*
   ** Headers of the page
@@ -54,4 +56,15 @@ module.exports = {
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
   ],
+  generate: {
+    routes() {
+      const routes = [];
+      const promise = contentfulClient.getEntries({ content_type: 'page' })
+        .then(response => (
+          response.items.forEach(item => routes.push(`/${item.fields.path}/`))
+        ))
+        .then(() => routes);
+      return Promise.resolve(promise);
+    },
+  },
 };
