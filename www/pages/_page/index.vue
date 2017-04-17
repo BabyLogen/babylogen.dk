@@ -15,7 +15,7 @@ export default {
   computed: mapState(['meta', 'page']),
   head: headPage,
   fetch({ store, params, error }) {
-    return fetchPage({ id: store.state.pages[params.page], store, error });
+    return fetchPage({ id: store.state.pages.pathToId[params.page], store, error });
   },
 };
 </script>

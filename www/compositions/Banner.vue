@@ -4,7 +4,7 @@
       xs="12"
       md="fit"
       class="background-image cover Banner-image"
-      v-bind:style="{ 'background-image': `url(${imageUrl}?fm=jpg&q=80&fl=progressive&w=1000)` }"
+      :style="{ 'background-image': `url(${imageUrl}?fm=jpg&q=80&fl=progressive&w=1000)` }"
     >
     </grid-column>
     <grid-column
@@ -14,7 +14,7 @@
       class="bg-primary caps light Banner-text"
     >
       {{text}}<br>
-      <custom-button to="/om-os/">{{buttonText}}</custom-button>
+      <custom-button :to="buttonLink">{{buttonText}}</custom-button>
     </grid-column>
   </grid-container>
 </template>
@@ -30,7 +30,7 @@ export default {
     GridColumn,
     CustomButton,
   },
-  props: ['buttonText', 'imageUrl', 'text'],
+  props: ['buttonText', 'imageUrl', 'text', 'buttonLink'],
 };
 </script>
 
