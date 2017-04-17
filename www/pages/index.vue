@@ -1,47 +1,23 @@
 <template>
-  <div>
-    <section v-for="section in page.sections">
-      <banner
-        v-if="section.sys.contentType.sys.id === 'banner'"
-        v-bind:image-url="section.fields.image.fields.file.url"
-        v-bind:text="section.fields.text"
-        v-bind:button-text="section.fields.buttonText"
-      />
-    </section>
-  </div>
+  <Page :data="page" />
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import Banner from '../compositions/Banner.vue';
-import CustomButton from '../elements/CustomButton.vue';
-import contentfulClient from '../assets/js/contentful-client';
+import Page from '../templates/Page.vue';
+import fetchPage from '../assets/js/fetch/page';
+import headPage from '../assets/js/head/page';
 
 export default {
   components: {
-    Banner,
-    CustomButton,
+    Page,
   },
   computed: mapState(['meta', 'page']),
-  head() {
-    return {
-      title: this.meta.title,
-      meta: [
-        { hid: 'description', name: 'description', content: this.meta.description },
-      ],
-    };
-  },
-  fetch({ store }) {
-    return contentfulClient
-      .getEntries({ 'sys.id': '6vxDOeYLjqmm0aaa2mm8eC' })
-      .then((response) => {
-        const fields = response.items[0].fields;
-        store.commit('meta/set', fields);
-        store.commit('page/setSections', fields.sections);
-      });
+  head: headPage,
+  fetch({ store, error }) {
+    return fetchPage({ id: store.state.pages.forside, store, error });
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>
