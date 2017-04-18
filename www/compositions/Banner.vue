@@ -53,13 +53,13 @@ export default {
     padding: 1rem 1.5rem;
   }
   @media (min-width: 768px) {
-    .Banner-text {
+    .Banner-text-content {
       font-size: 1.5rem;
       padding: 2rem 1.5rem;
     }
   }
   @media (min-width: 992px) {
-    .Banner-text {
+    .Banner-text-content {
       font-size: 2rem;
       padding: 5rem 1.5rem;
     }
@@ -68,7 +68,7 @@ export default {
     }
   }
   @media (min-width: 1200px) {
-    .Banner-text {
+    .Banner-text-content {
       padding: 6rem 2.5rem;
     }
   }
