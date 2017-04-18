@@ -13,8 +13,10 @@
       move-md="left"
       class="Banner-text"
     >
-      {{text}}<br>
-      <custom-button :to="buttonLink">{{buttonText}}</custom-button>
+      <div class="Banner-text-content">
+        {{text}}<br>
+        <custom-button :to="buttonLink">{{buttonText}}</custom-button>
+      </div>
     </grid-column>
   </grid-container>
 </template>
@@ -43,21 +45,23 @@ export default {
   }
   .Banner-text {
     background-color: var(--color-primary);
+  }
+  .Banner-text-content {
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: 300;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
   }
   @media (min-width: 768px) {
     .Banner-text {
       font-size: 1.5rem;
-      padding: 2rem 2rem;
+      padding: 2rem 1.5rem;
     }
   }
   @media (min-width: 992px) {
     .Banner-text {
       font-size: 2rem;
-      padding: 5rem 2rem;
+      padding: 5rem 1.5rem;
     }
     .Banner-image {
       padding-top: 0;
@@ -65,7 +69,7 @@ export default {
   }
   @media (min-width: 1200px) {
     .Banner-text {
-      padding: 6rem 3rem;
+      padding: 6rem 2.5rem;
     }
   }
 
