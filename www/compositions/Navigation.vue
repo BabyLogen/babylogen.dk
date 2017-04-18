@@ -1,34 +1,40 @@
 <template>
   <div
-    class="fixed top left right bg-white animate-ease animate-fast animate-padding Navigation"
+    class="Navigation"
     :class="{ 'Navigation--collapsed': scrollPosition > 200 }"
   >
     <grid-container align="middle">
       <grid-column xs="expand">
-        <nav-link v-on:click.native="closeNavigation" to="/" class="margin-left-neg-1 animate-ease animate-fast animate-all Navigation-logo">BabyLogen</nav-link>
+        <nav-link
+          v-on:click.native="closeNavigation"
+          to="/"
+          class="Navigation-logo"
+        >
+          BabyLogen
+        </nav-link>
       </grid-column>
       <grid-column xs="fit" class="right">
-        <nav-link v-on:click.native="closeNavigation" to="/om-os/" class="hide-xs inline-md">Om os</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/events/" class="hide-xs inline-md">Events</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/ydelser/" class="hide-xs inline-md">Ydelser</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/blog/" class="hide-xs inline-md">Blog</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/shop/" class="hide-xs inline-md">Shop</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/kurv/" class="hide-xs inline-sm margin-left-1">
-          <span class="Navigation-basket">Kurv (0)</span>
+        <nav-link v-on:click.native="closeNavigation" to="/om-os/" class="Navigation-link">Om os</nav-link>
+        <nav-link v-on:click.native="closeNavigation" to="/events/" class="Navigation-link">Events</nav-link>
+        <nav-link v-on:click.native="closeNavigation" to="/ydelser/" class="Navigation-link">Ydelser</nav-link>
+        <nav-link v-on:click.native="closeNavigation" to="/blog/" class="Navigation-link">Blog</nav-link>
+        <nav-link v-on:click.native="closeNavigation" to="/shop/" class="Navigation-link">Shop</nav-link>
+        <nav-link v-on:click.native="closeNavigation" to="/kurv/" class="Navigation-basket">
+          <span>Kurv (0)</span>
         </nav-link>
-        <nav-link v-on:click.native="toggleNavigation" class="margin-left-1 hide-md">
-          <span class="border border-grey-75 Navigation-menu">{{open ? 'Luk' : 'Menu'}}</span>
+        <nav-link v-on:click.native="toggleNavigation" class="Navigation-menu">
+          <span>{{open ? 'Luk' : 'Menu'}}</span>
         </nav-link>
       </grid-column>
-      <grid-column xs="12" class="hide-md padding-top-1" :class="{ hidden: !open }">
-        <div class="center margin-vertical-3"><nav-link v-on:click.native="closeNavigation" to="/om-os/">Om os</nav-link></div>
-        <div class="center margin-vertical-3"><nav-link v-on:click.native="closeNavigation" to="/events/">Events</nav-link></div>
-        <div class="center margin-vertical-3"><nav-link v-on:click.native="closeNavigation" to="/ydelser/">Ydelser</nav-link></div>
-        <div class="center margin-vertical-3"><nav-link v-on:click.native="closeNavigation" to="/blog/">Blog</nav-link></div>
-        <div class="center margin-vertical-3"><nav-link v-on:click.native="closeNavigation" to="/shop/">Shop</nav-link></div>
-        <div class="center margin-vertical-3 hide-sm">
+      <grid-column xs="12" class="Navigation-mobile" :class="{ 'Navigation-mobile--hidden': !open }">
+        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/om-os/">Om os</nav-link></div>
+        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/events/">Events</nav-link></div>
+        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/ydelser/">Ydelser</nav-link></div>
+        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/blog/">Blog</nav-link></div>
+        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/shop/">Shop</nav-link></div>
+        <div class="Navigation-mobile-link Navigation-mobile-link--basket">
           <nav-link v-on:click.native="closeNavigation" to="/kurv/">
-            <span class="Navigation-basket">Kurv (0)</span>
+            <span>Kurv (0)</span>
           </nav-link>
         </div>
       </grid-column>
@@ -73,10 +79,21 @@ export default {
 
 <style>
   .Navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
     padding-top: 1rem;
     padding-bottom: 1rem;
     transform: translateZ(0);
+    transition: padding 0.25s cubic-bezier(.5,0,.1,1);
     z-index: 100;
+  }
+
+  .Navigation-logo {
+    margin-left: -1rem;
+    transition: all 0.25s cubic-bezier(.5,0,.1,1);
   }
   .Navigation-logo.nuxt-link-active,
   .Navigation-logo.nuxt-link-active:focus,
@@ -96,13 +113,42 @@ export default {
     font-weight: 700;
   }
 
+  .Navigation-link {
+    display: none;
+    margin-right: 1rem;
+  }
+
   .Navigation-basket {
+    display: none;
+  }
+  .Navigation-basket span {
     background-color: var(--color-primary);
     margin: -12px -1rem -12px -1rem;
     padding: 12px 1rem;
   }
 
   .Navigation-menu {
+    margin-left: 1rem;
+  }
+  .Navigation-menu span {
+    border: 1px solid var(--color-grey-75);
+    margin: -12px -1rem -12px -1rem;
+    padding: 12px 1rem;
+  }
+
+  .Navigation-mobile {
+    padding-top: 1rem;
+  }
+  .Navigation-mobile--hidden {
+    display: none;
+  }
+  .Navigation-mobile-link {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .Navigation-mobile-link--basket span {
+    background-color: var(--color-primary);
     margin: -12px -1rem -12px -1rem;
     padding: 12px 1rem;
   }
@@ -114,6 +160,24 @@ export default {
     }
     .Navigation-logo {
       font-size: 2rem;
+    }
+    .Navigation-basket {
+      display: inline;
+    }
+    .Navigation-mobile-link--basket {
+      display: none;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .Navigation-link {
+      display: inline;
+    }
+    .Navigation-menu {
+      display: none;
+    }
+    .Navigation-mobile {
+      display: none;
     }
   }
 </style>
