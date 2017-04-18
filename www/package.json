@@ -10,6 +10,7 @@
   "dependencies": {
     "contentful": "latest",
     "gh-pages": "latest",
+    "lodash": "latest",
     "nuxt": "latest"
   },
   "scripts": {

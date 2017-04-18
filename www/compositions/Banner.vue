@@ -4,7 +4,7 @@
       xs="12"
       md="fit"
       class="background-image cover Banner-image"
-      :style="{ 'background-image': `url(${imageUrl}?fm=jpg&q=80&fl=progressive&w=1000)` }"
+      :style="{ 'background-image': `url(${imageUrl}?fm=jpg&fl=progressive&w=1000)` }"
     >
     </grid-column>
     <grid-column

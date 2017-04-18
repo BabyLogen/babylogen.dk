@@ -1,15 +1,12 @@
 import contentfulClient from '../assets/js/contentful-client';
 
 export const state = {
-  pages: {
-    pathToId: {},
-    idToPath: {},
-  },
+  pages: [],
 };
 
 export const mutations = {
-  setPages(currentState, pages) {
-    currentState.pages = pages;
+  addPage(currentState, page) {
+    currentState.pages.push(page);
   },
 };
 
@@ -17,15 +14,13 @@ export const actions = {
   nuxtServerInit({ commit }) {
     const promise = contentfulClient.getEntries({ content_type: 'page' }).then((response) => {
       if (response.items.length === 0) { return; }
-      const pages = {
-        pathToId: {},
-        idToPath: {},
-      };
       response.items.forEach((item) => {
-        pages.pathToId[item.fields.path] = item.sys.id;
-        pages.idToPath[item.sys.id] = item.fields.path;
+        commit('addPage', {
+          id: item.sys.id,
+          path: item.fields.path,
+          title: item.fields.title,
+        });
       });
-      commit('setPages', pages);
     });
     return Promise.resolve(promise);
   },

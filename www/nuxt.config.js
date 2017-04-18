@@ -52,7 +52,7 @@ module.exports = {
       }
     },
   },
-  vendor: ['contentful'],
+  vendor: ['contentful', 'lodash/find'],
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
   ],
