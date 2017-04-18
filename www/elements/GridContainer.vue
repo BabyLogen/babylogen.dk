@@ -1,5 +1,5 @@
 <template>
-  <div class="flex wrap width-100 middle Grid-container" :class="classes">
+  <div class="Grid-container" :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   computed: {
     classes() {
       let c = '';
-      c += this.align ? ` flex-${this.align}` : '';
+      c += this.align ? ` Grid-container--${this.align}` : '';
 
       return c;
     },
@@ -27,8 +27,17 @@ export default {
   .Grid-container {
     padding-left: 1rem;
     padding-right: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  .Grid-container--top { align-items: flex-start; }
+  .Grid-container--middle { align-items: center; }
+  .Grid-container--bottom { align-items: flex-end; }
+
   @media (min-width: 768px) {
     .Grid-container {
       padding-left: 2rem;

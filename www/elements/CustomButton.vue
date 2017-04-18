@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link v-bind:to="to" class="no-text-decoration padding-vertical-05 padding-horizontal-2 pointer bold caps CustomButton" :class="classes">
+  <nuxt-link v-bind:to="to" class="CustomButton" :class="classes">
     <slot></slot>
   </nuxt-link>
 </template>
@@ -19,7 +19,7 @@ export default {
   computed: {
     classes() {
       let c = '';
-      c += this.type === 'ghost' ? ' black border border-black bg-transparent CustomButton--ghost' : '';
+      c += this.type === 'ghost' ? ' CustomButton--ghost' : '';
 
       return c;
     },
@@ -28,10 +28,22 @@ export default {
 </script>
 
 <style>
+  .CustomButton {
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
   .CustomButton:focus {
     outline: 0;
   }
 
+  .CustomButton--ghost {
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    background: transparent;
+  }
   .CustomButton--ghost:hover {
     color: var(--color-primary);
     background-color: var(--color-black);
