@@ -3,7 +3,7 @@
     <grid-column
       xs="12"
       md="fit"
-      class="background-image cover Banner-image"
+      class="Banner-image"
       :style="{ 'background-image': `url(${imageUrl}?fm=jpg&fl=progressive&w=1000)` }"
     >
     </grid-column>
@@ -11,7 +11,7 @@
       xs="12"
       md="4"
       move-md="left"
-      class="bg-primary caps light Banner-text"
+      class="Banner-text"
     >
       {{text}}<br>
       <custom-button :to="buttonLink">{{buttonText}}</custom-button>
@@ -36,10 +36,16 @@ export default {
 
 <style>
   .Banner-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     padding-top: 50%;
   }
   .Banner-text {
+    background-color: var(--color-primary);
+    text-transform: uppercase;
     font-size: 1.5rem;
+    font-weight: 300;
     padding: 1rem 2rem;
   }
   @media (min-width: 768px) {
