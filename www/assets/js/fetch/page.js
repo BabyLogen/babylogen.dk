@@ -7,9 +7,9 @@ export default function fetchPage({ id, store, error }) {
       if (response.items.length === 0) {
         return error({ statusCode: 404, message: 'Post not found' });
       }
-      const fields = response.items[0].fields;
-      store.commit('meta/set', fields);
-      store.commit('page/setSections', fields.sections);
+      const page = response.items[0];
+      store.commit('meta/set', page.fields);
+      store.commit('page/set', page);
       return null;
     });
 }

@@ -1,5 +1,5 @@
 <template>
-  <Page :data="page" />
+  <Page :page="page" />
 </template>
 
 <script>

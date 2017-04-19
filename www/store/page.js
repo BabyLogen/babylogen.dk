@@ -1,9 +1,11 @@
 export const state = {
-  sections: [],
+  fields: {},
+  sys: {},
 };
 
 export const mutations = {
-  setSections(currentState, sections) {
-    currentState.sections = sections;
+  set(currentState, page) {
+    currentState.fields = page.fields;
+    currentState.sys = page.sys;
   },
 };
