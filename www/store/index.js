@@ -2,11 +2,15 @@ import contentfulClient from '../assets/js/contentful-client';
 
 export const state = {
   pages: [],
+  navigation: [],
 };
 
 export const mutations = {
   addPage(currentState, page) {
     currentState.pages.push(page);
+  },
+  addNavigation(currentState, navigation) {
+    currentState.navigation = navigation;
   },
 };
 
@@ -21,7 +25,20 @@ export const actions = {
           title: item.fields.title,
         });
       });
-    });
+    }).then(() => (
+      contentfulClient
+        .getEntries({ 'sys.id': 'xdSWiS7rYy4WE0OOk0Q6I' })
+        .then((response) => {
+          if (response.items.length === 0) {
+            return;
+          }
+          const navigation = response.items[0].fields.pages.map(page => ({
+            path: `/${page.fields.path}/`,
+            title: page.fields.title,
+          }));
+          commit('addNavigation', navigation);
+        })
+      ));
     return Promise.resolve(promise);
   },
 };

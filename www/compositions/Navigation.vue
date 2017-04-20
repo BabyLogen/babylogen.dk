@@ -14,11 +14,9 @@
         </nav-link>
       </grid-column>
       <grid-column xs="fit" class="right">
-        <nav-link v-on:click.native="closeNavigation" to="/om-os/" class="Navigation-link">Om os</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/events/" class="Navigation-link">Events</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/ydelser/" class="Navigation-link">Ydelser</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/blog/" class="Navigation-link">Blog</nav-link>
-        <nav-link v-on:click.native="closeNavigation" to="/shop/" class="Navigation-link">Shop</nav-link>
+        <template v-for="link in navigation">
+          <nav-link v-on:click.native="closeNavigation" :to="link.path" class="Navigation-link">{{link.title}}</nav-link>
+        </template>
         <nav-link v-on:click.native="closeNavigation" to="/kurv/" class="Navigation-basket">
           <span>Kurv (0)</span>
         </nav-link>
@@ -27,11 +25,9 @@
         </nav-link>
       </grid-column>
       <grid-column xs="12" class="Navigation-mobile" :class="{ 'Navigation-mobile--hidden': !open }">
-        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/om-os/">Om os</nav-link></div>
-        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/events/">Events</nav-link></div>
-        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/ydelser/">Ydelser</nav-link></div>
-        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/blog/">Blog</nav-link></div>
-        <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" to="/shop/">Shop</nav-link></div>
+        <template v-for="link in navigation">
+          <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" :to="link.path">{{ link.title }}</nav-link></div>
+        </template>
         <div class="Navigation-mobile-link Navigation-mobile-link--basket">
           <nav-link v-on:click.native="closeNavigation" to="/kurv/">
             <span>Kurv (0)</span>
@@ -43,6 +39,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import GridContainer from '../elements/GridContainer.vue';
 import GridColumn from '../elements/GridColumn.vue';
 import NavLink from '../elements/NavLink.vue';
@@ -59,6 +56,7 @@ export default {
       open: false,
     };
   },
+  computed: mapState(['navigation']),
   methods: {
     updateScroll() {
       this.scrollPosition = window.scrollY;
@@ -138,6 +136,7 @@ export default {
 
   .Navigation-mobile {
     padding-top: 1rem;
+    min-height: 100vh;
   }
   .Navigation-mobile--hidden {
     display: none;
