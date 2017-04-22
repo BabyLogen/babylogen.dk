@@ -84,7 +84,7 @@ export default {
   }
   @media (min-width: 1200px) {
     .Banner-text-content {
-      padding: 6rem 2.5rem;
+      padding: 10rem 2.5rem;
     }
   }
 

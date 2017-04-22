@@ -91,7 +91,7 @@ export default {
 
   .Navigation-logo {
     margin-left: -1rem;
-    transition: all 0.25s cubic-bezier(.5,0,.1,1);
+    transition: all 0.25s cubic-bezier(.5,0,.1,1) !important;
   }
   .Navigation-logo.nuxt-link-active,
   .Navigation-logo.nuxt-link-active:focus,
@@ -103,8 +103,8 @@ export default {
   }
 
   .Navigation--collapsed {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
   }
   .Navigation--collapsed .Navigation-logo {
     font-size: 1rem;

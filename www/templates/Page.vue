@@ -11,6 +11,11 @@
         v-bind="section.fields"
         class="Page-section"
       />
+      <item-list
+        v-if="section.sys.contentType.sys.id === 'itemList'"
+        v-bind="section.fields"
+        class="Page-section"
+      />
     </section>
   </div>
 </template>
@@ -18,11 +23,13 @@
 <script>
 import Banner from '../compositions/Banner.vue';
 import ContentBox from '../compositions/ContentBox.vue';
+import ItemList from '../compositions/ItemList.vue';
 
 export default {
   components: {
     Banner,
     ContentBox,
+    ItemList,
   },
   props: {
     page: { type: Object },

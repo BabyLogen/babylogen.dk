@@ -28,6 +28,10 @@ export default {
     font-weight: 700;
     text-transform: uppercase;
   }
+  .CustomButton:hover {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
   .CustomButton:focus {
     outline: 0;
   }
