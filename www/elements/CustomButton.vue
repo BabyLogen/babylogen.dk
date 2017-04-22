@@ -1,5 +1,7 @@
 <template>
-  <nuxt-link v-bind:to="to" class="CustomButton" :class="classes">
+  <nuxt-link v-bind:to="to" class="CustomButton" :class="[
+    `CustomButton--${type}`,
+  ]">
     <slot></slot>
   </nuxt-link>
 </template>
@@ -10,25 +12,16 @@ export default {
     type: {
       type: String,
       default: 'ghost',
-      validator(v) { return ['ghost', 'primary', 'black'].some(type => type === v); },
+      validator(v) { return ['ghost', 'ghost-primary', 'primary', 'black'].some(type => type === v); },
     },
-    to: {
-      type: String,
-    },
-  },
-  computed: {
-    classes() {
-      let c = '';
-      c += this.type === 'ghost' ? ' CustomButton--ghost' : '';
-
-      return c;
-    },
+    to: String,
   },
 };
 </script>
 
 <style>
   .CustomButton {
+    display: inline-block;
     text-decoration: none;
     padding: 0.5rem 2rem;
     cursor: pointer;
@@ -50,5 +43,19 @@ export default {
   }
   .CustomButton--ghost:active {
     color: var(--color-white);
+  }
+
+  .CustomButton--ghost-primary {
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    background: transparent;
+  }
+  .CustomButton--ghost-primary:hover {
+    color: var(--color-black);
+    background-color: var(--color-primary);
+  }
+  .CustomButton--ghost-primary:active {
+    background-color: var(--color-white);
+    borde-color: var(--color-white);
   }
 </style>

@@ -3,7 +3,13 @@
     <section v-for="section in page.fields.sections">
       <banner
         v-if="section.sys.contentType.sys.id === 'banner'"
-        :banner="section"
+        v-bind="section.fields"
+        class="Page-section"
+      />
+      <content-box
+        v-if="section.sys.contentType.sys.id === 'contentBox'"
+        v-bind="section.fields"
+        class="Page-section"
       />
     </section>
   </div>
@@ -11,12 +17,12 @@
 
 <script>
 import Banner from '../compositions/Banner.vue';
-import CustomButton from '../elements/CustomButton.vue';
+import ContentBox from '../compositions/ContentBox.vue';
 
 export default {
   components: {
     Banner,
-    CustomButton,
+    ContentBox,
   },
   props: {
     page: { type: Object },
@@ -24,4 +30,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+  .Page-section {
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 768px) {
+    .Page-section {
+      margin-bottom: 4rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .Page-section {
+      margin-bottom: 6rem;
+    }
+  }
+</style>

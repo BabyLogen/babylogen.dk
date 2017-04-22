@@ -4,7 +4,7 @@
       xs="12"
       md="fit"
       class="Banner-image"
-      :style="{ 'background-image': `url(${banner.fields.image.fields.file.url}?fm=jpg&fl=progressive&w=1000)` }"
+      :style="{ 'background-image': `url(${image.fields.file.url}?fm=jpg&fl=progressive&w=1000)` }"
     >
     </grid-column>
     <grid-column
@@ -14,8 +14,8 @@
       class="Banner-text"
     >
       <div class="Banner-text-content">
-        {{banner.fields.text}}<br>
-        <custom-button :to="getButtonLink()">{{banner.fields.buttonText}}</custom-button>
+        {{text}}<br>
+        <custom-button :to="getButtonLink()">{{buttonText}}</custom-button>
       </div>
     </grid-column>
   </grid-container>
@@ -34,11 +34,17 @@ export default {
     GridColumn,
     CustomButton,
   },
-  props: ['banner'],
+  props: {
+    name: String,
+    text: String,
+    image: Object,
+    buttonText: String,
+    buttonLink: Object,
+  },
   computed: mapState(['pages']),
   methods: {
     getButtonLink() {
-      const { path } = find(this.pages, { id: this.banner.fields.buttonLink.sys.id });
+      const { path } = find(this.pages, { id: this.buttonLink.sys.id });
       return `/${path}/`;
     },
   },
