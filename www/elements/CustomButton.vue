@@ -56,6 +56,6 @@ export default {
   }
   .CustomButton--ghost-primary:active {
     background-color: var(--color-white);
-    borde-color: var(--color-white);
+    border-color: var(--color-white);
   }
 </style>
