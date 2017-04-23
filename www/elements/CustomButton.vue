@@ -27,6 +27,7 @@ export default {
     cursor: pointer;
     font-weight: 700;
     text-transform: uppercase;
+    transition: all 0.25s cubic-bezier(.5,0,.1,1);
   }
   .CustomButton:hover {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);

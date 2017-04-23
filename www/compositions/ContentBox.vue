@@ -125,4 +125,10 @@ export default {
   .ContentBox-button {
     margin-top: 2rem;
   }
+
+  @media (min-width: 1200px) {
+    .ContentBox-content {
+      padding: 10rem 2.5rem;
+    }
+  }
 </style>

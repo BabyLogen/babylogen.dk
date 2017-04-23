@@ -6,7 +6,8 @@
     </grid-column>
     <grid-column
       v-for="(item, index) in items"
-      xs="6"
+      xs="12"
+      sm="6"
       md="4"
       lg="3"
       class="ItemList-item"
@@ -14,6 +15,17 @@
       :class="`ItemList-item--col-${index % 4}`"
     >
       <list-item :id="item.sys.id" />
+    </grid-column>
+    <grid-column
+      xs="12"
+      sm="6"
+      md="4"
+      lg="3"
+      class="ItemList-item ItemList-item--cta"
+    >
+      <div>
+        <custom-button :to="getButtonLink()" width="auto">{{buttonText}}</custom-button>
+      </div>
     </grid-column>
   </grid-container>
 </template>
@@ -74,6 +86,13 @@ export default {
   }
   .ItemList-item--col-3 {
     background-color: var(--color-grey-75);
+  }
+  .ItemList-item--cta {
+    background-color: var(--color-primary);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
   @media (min-width: 768px) {
   }

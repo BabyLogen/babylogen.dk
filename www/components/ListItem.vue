@@ -2,7 +2,7 @@
   <nuxt-link :to="`/ydelser/${path}/`" class="ListItem">
     <div
       class="ListItem-image"
-      :style="{ 'background-image': `url(${image.fields.file.url}?fm=jpg&fl=progressive&w=464)` }"
+      :style="{ 'background-image': `url(${image.fields.file.url}?fm=jpg&fl=progressive&w=735)` }"
     />
     <div class="ListItem-content">
       <h3>{{header}}</h3>
@@ -59,6 +59,7 @@ export default {
     position: relative;
     height: 100%;
     padding-bottom: 2rem;
+    transition: all 0.25s cubic-bezier(.5,0,.1,1);
   }
   .ListItem:hover {
     background-color: var(--color-primary);
@@ -69,7 +70,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 100%;
+    padding-top: 50%;
   }
   .ListItem-content {
     padding: 1rem;
@@ -88,8 +89,21 @@ export default {
     bottom: 1rem;
   }
   @media (min-width: 768px) {
+    .ListItem-image {
+      padding-top: 60%;
+    }
     .ListItem h3 {
       font-size: 1.25rem;
+    }
+  }
+  @media (min-width: 992px) {
+    .ListItem-image {
+      padding-top: 70%;
+    }
+  }
+  @media (min-width: 1200px) {
+    .ListItem-image {
+      padding-top: 80%;
     }
   }
 </style>

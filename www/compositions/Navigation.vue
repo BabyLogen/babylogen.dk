@@ -82,8 +82,8 @@ export default {
     left: 0;
     right: 0;
     background-color: var(--color-white);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 13px;
+    padding-bottom: 13px;
     transform: translateZ(0);
     transition: padding 0.25s cubic-bezier(.5,0,.1,1);
     z-index: 100;
@@ -103,8 +103,8 @@ export default {
   }
 
   .Navigation--collapsed {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
+    padding-top: 13px !important;
+    padding-bottom: 13px !important;
   }
   .Navigation--collapsed .Navigation-logo {
     font-size: 1rem;
