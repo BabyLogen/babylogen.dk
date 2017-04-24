@@ -79,7 +79,6 @@ export default {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
-    word-break: break-all;
   }
   .ListItem-price {
     font-weight: 700;

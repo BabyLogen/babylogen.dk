@@ -111,6 +111,9 @@ export default {
     font-weight: 700;
   }
 
+  .Navigation-links {
+    text-align: right;
+  }
   .Navigation-link {
     display: none;
     margin-right: 1rem;
