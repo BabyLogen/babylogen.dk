@@ -13,7 +13,7 @@
           BabyLogen
         </nav-link>
       </grid-column>
-      <grid-column xs="fit" class="right">
+      <grid-column xs="fit" class="Navigation-links">
         <template v-for="link in navigation">
           <nav-link v-on:click.native="closeNavigation" :to="link.path" class="Navigation-link">{{link.title}}</nav-link>
         </template>
