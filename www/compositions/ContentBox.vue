@@ -17,7 +17,7 @@
         <h2 class="ContentBox-header">{{header}}</h2>
         <p>{{body}}</p>
         <p class="ContentBox-button">
-          <custom-button type="ghost-primary" :to="getButtonLink()">{{buttonText}}</custom-button>
+          <custom-button type="ghost-primary" :to="`${buttonLink.fields.path}`">{{buttonText}}</custom-button>
         </p>
       </div>
     </grid-column>
@@ -30,8 +30,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import find from 'lodash/find';
 import GridContainer from '../elements/GridContainer.vue';
 import GridColumn from '../elements/GridColumn.vue';
 import CustomButton from '../elements/CustomButton.vue';
@@ -65,7 +63,6 @@ export default {
     buttonLink: Object,
   },
   computed: {
-    ...mapState(['pages']),
     grid() {
       let grid = {
         padding: {
@@ -92,12 +89,6 @@ export default {
         };
       }
       return grid;
-    },
-  },
-  methods: {
-    getButtonLink() {
-      const { path } = find(this.pages, { id: this.buttonLink.sys.id });
-      return `/${path}/`;
     },
   },
 };

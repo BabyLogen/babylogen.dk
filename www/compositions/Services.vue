@@ -1,8 +1,8 @@
 <template>
   <grid-container>
     <grid-column xs="12">
-      <h2 class="ItemList-header">{{header}}</h2>
-      <p class="ItemList-description">{{description}}</p>
+      <h2 class="Services-header">{{header}}</h2>
+      <p class="Services-description">{{description}}</p>
     </grid-column>
     <grid-column
       v-for="(item, index) in items"
@@ -10,30 +10,30 @@
       sm="6"
       md="4"
       lg="3"
-      class="ItemList-item"
+      class="Services-item"
       :key="item.sys.id"
-      :class="`ItemList-item--col-${index % 4}`"
+      :class="`Services-item--col-${index % 4}`"
     >
-      <list-item :id="item.sys.id" />
+      <service v-bind="item.fields" />
     </grid-column>
     <grid-column
       xs="12"
       sm="6"
       md="4"
       lg="3"
-      class="ItemList-item ItemList-item--cta"
+      class="Services-item Services-item--cta"
     >
       <div>
-        <custom-button :to="getButtonLink()" width="auto">{{buttonText}}</custom-button>
+        <custom-button :to="`/ydelser/${buttonLink.fields.path}`" width="auto">
+          {{buttonText}}
+        </custom-button>
       </div>
     </grid-column>
   </grid-container>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import find from 'lodash/find';
-import ListItem from '../components/ListItem.vue';
+import Service from '../components/Service.vue';
 import GridContainer from '../elements/GridContainer.vue';
 import GridColumn from '../elements/GridColumn.vue';
 import CustomButton from '../elements/CustomButton.vue';
@@ -43,7 +43,7 @@ export default {
     GridContainer,
     GridColumn,
     CustomButton,
-    ListItem,
+    Service,
   },
   props: {
     header: String,
@@ -52,42 +52,35 @@ export default {
     buttonText: String,
     buttonLink: Object,
   },
-  computed: mapState(['pages']),
-  methods: {
-    getButtonLink() {
-      const { path } = find(this.pages, { id: this.buttonLink.sys.id });
-      return `/${path}/`;
-    },
-  },
 };
 </script>
 
 <style>
-  .ItemList-header {
+  .Services-header {
     font-size: 2rem;
     font-weight: 300;
     text-transform: uppercase;
   }
-  .ItemList-description {
+  .Services-description {
     margin-bottom: 1rem;
   }
 
-  .ItemList-item {
+  .Services-item {
     padding: 0;
   }
-  .ItemList-item--col-0 {
+  .Services-item--col-0 {
     background-color: var(--color-grey-90);
   }
-  .ItemList-item--col-1 {
+  .Services-item--col-1 {
     background-color: var(--color-grey-85);
   }
-  .ItemList-item--col-2 {
+  .Services-item--col-2 {
     background-color: var(--color-grey-80);
   }
-  .ItemList-item--col-3 {
+  .Services-item--col-3 {
     background-color: var(--color-grey-75);
   }
-  .ItemList-item--cta {
+  .Services-item--cta {
     background-color: var(--color-primary);
     text-align: center;
     display: flex;

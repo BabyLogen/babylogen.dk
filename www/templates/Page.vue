@@ -11,7 +11,7 @@
         v-bind="section.fields"
         class="Page-section"
       />
-      <item-list
+      <services
         v-if="section.sys.contentType.sys.id === 'itemList'"
         v-bind="section.fields"
         class="Page-section"
@@ -28,14 +28,14 @@
 <script>
 import Banner from '../compositions/Banner.vue';
 import ContentBox from '../compositions/ContentBox.vue';
-import ItemList from '../compositions/ItemList.vue';
+import Services from '../compositions/Services.vue';
 import SocialMediaLinks from '../compositions/SocialMediaLinks.vue';
 
 export default {
   components: {
     Banner,
     ContentBox,
-    ItemList,
+    Services,
     SocialMediaLinks,
   },
   props: {

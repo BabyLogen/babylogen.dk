@@ -15,15 +15,15 @@
     >
       <div class="Banner-text-content">
         {{text}}<br>
-	<custom-button :to="getButtonLink()" class="Banner-cta">{{buttonText}}</custom-button>
+      	<custom-button :to="`/${buttonLink.fields.path}/`" class="Banner-cta">
+          {{buttonText}}
+        </custom-button>
       </div>
     </grid-column>
   </grid-container>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import find from 'lodash/find';
 import GridContainer from '../elements/GridContainer.vue';
 import GridColumn from '../elements/GridColumn.vue';
 import CustomButton from '../elements/CustomButton.vue';
@@ -40,13 +40,6 @@ export default {
     image: Object,
     buttonText: String,
     buttonLink: Object,
-  },
-  computed: mapState(['pages']),
-  methods: {
-    getButtonLink() {
-      const { path } = find(this.pages, { id: this.buttonLink.sys.id });
-      return `/${path}/`;
-    },
   },
 };
 </script>
