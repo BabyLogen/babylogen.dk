@@ -52,10 +52,19 @@ module.exports = {
   generate: {
     routes() {
       const routes = [];
+
+      // First level pages
       const promise = contentfulClient.getEntries({ content_type: 'page' })
         .then(response => (
           response.items.forEach(item => routes.push(`/${item.fields.path}/`))
         ))
+
+        // Services
+        .then(() => contentfulClient.getEntries({ content_type: 'services' }))
+        .then(response => (
+          response.items.forEach(item => routes.push(`/ydelser/${item.fields.path}/`))
+        ))
+
         .then(() => routes);
       return Promise.resolve(promise);
     },
