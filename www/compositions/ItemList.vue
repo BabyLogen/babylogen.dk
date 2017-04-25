@@ -93,6 +93,7 @@ export default {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    min-height: 20rem;
   }
   @media (min-width: 768px) {
   }

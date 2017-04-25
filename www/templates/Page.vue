@@ -16,6 +16,11 @@
         v-bind="section.fields"
         class="Page-section"
       />
+      <social-media-links
+        v-if="section.sys.contentType.sys.id === 'socialMediaList'"
+        v-bind="section.fields"
+        class="Page-section"
+      />
     </section>
   </div>
 </template>
@@ -24,12 +29,14 @@
 import Banner from '../compositions/Banner.vue';
 import ContentBox from '../compositions/ContentBox.vue';
 import ItemList from '../compositions/ItemList.vue';
+import SocialMediaLinks from '../compositions/SocialMediaLinks.vue';
 
 export default {
   components: {
     Banner,
     ContentBox,
     ItemList,
+    SocialMediaLinks,
   },
   props: {
     page: { type: Object },
