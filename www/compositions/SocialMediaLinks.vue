@@ -5,10 +5,8 @@
     </grid-column>
     <grid-column
       v-for="(socialMediaLink, index) in socialMediaLinks"
-      xs="12"
-      sm="6"
-      md="4"
-      lg="3"
+      xs="6"
+      md="3"
       class="SocialMediaLinks-item"
       :key="socialMediaLink.sys.id"
       :class="`SocialMediaLinks-item--col-${index % 4}`"
@@ -49,7 +47,7 @@ export default {
   .SocialMediaLinks-item:before {
     content: '';
     float: left;
-    padding-top: 100%;
+    padding-top: 50%;
   }
   .SocialMediaLinks-item--col-0 {
     background-color: var(--color-grey-90);
@@ -62,6 +60,11 @@ export default {
   }
   .SocialMediaLinks-item--col-3 {
     background-color: var(--color-grey-75);
+  }
+  @media (min-width: 992px) {
+    .SocialMediaLinks-item:before {
+      padding-top: 100%;
+    }
   }
 
 </style>
