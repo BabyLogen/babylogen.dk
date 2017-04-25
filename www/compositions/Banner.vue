@@ -15,7 +15,7 @@
     >
       <div class="Banner-text-content">
         {{text}}<br>
-        <custom-button :to="getButtonLink()">{{buttonText}}</custom-button>
+	<custom-button :to="getButtonLink()" class="Banner-cta">{{buttonText}}</custom-button>
       </div>
     </grid-column>
   </grid-container>
@@ -66,6 +66,9 @@ export default {
     font-size: 1.5rem;
     font-weight: 300;
     padding: 1rem 1.5rem;
+  }
+  .Banner-cta {
+    margin-top: 2rem;
   }
   @media (min-width: 768px) {
     .Banner-text-content {
