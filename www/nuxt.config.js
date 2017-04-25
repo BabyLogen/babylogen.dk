@@ -60,7 +60,7 @@ module.exports = {
         ))
 
         // Services
-        .then(() => contentfulClient.getEntries({ content_type: 'services' }))
+        .then(() => contentfulClient.getEntries({ content_type: 'service' }))
         .then(response => (
           response.items.forEach(item => routes.push(`/ydelser/${item.fields.path}/`))
         ))
