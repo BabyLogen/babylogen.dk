@@ -1,19 +1,30 @@
 <template>
   <nuxt-link :to="`/ydelser/${path}/`" class="Service">
-    <div
-      class="Service-image"
-      :style="{ 'background-image': `url(${image.fields.file.url}?fm=jpg&fl=progressive&w=735)` }"
-    />
-    <div class="Service-content">
-      <h3>{{header}}</h3>
-      <p>{{summary}}</p>
-    </div>
-    <div class="Service-price">{{price}}</div>
+    <grid-container class="Service-container">
+      <grid-column xs="3" sm="12" class="Service-column">
+        <div class="Service-image"
+        :style="{ 'background-image': `url(${image.fields.file.url}?fm=jpg&fl=progressive&w=735)` }"/>
+      </grid-column>
+      <grid-column xs="9" sm="12" class="Service-column">
+        <div class="Service-content">
+          <h3>{{header}}</h3>
+          <p>{{summary}}</p>
+        </div>
+        <div class="Service-price">{{price}}</div>
+      </grid-column>
+    </grid-container>
   </nuxt-link>
 </template>
 
 <script>
+import GridContainer from '../elements/GridContainer.vue';
+import GridColumn from '../elements/GridColumn.vue';
+
 export default {
+  components: {
+    GridContainer,
+    GridColumn,
+  },
   props: {
     header: String,
     image: Object,
@@ -31,7 +42,6 @@ export default {
     text-decoration: none;
     position: relative;
     height: 100%;
-    padding-bottom: 2rem;
     transition: all 0.25s cubic-bezier(.5,0,.1,1);
   }
   .Service:hover {
@@ -39,14 +49,17 @@ export default {
     box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.25);
     z-index: 10;
   }
+  .Service-container, .Service-column {
+    padding: 0;
+  }
   .Service-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 50%;
+    padding-top: 100%;
   }
   .Service-content {
-    padding: 1rem;
+    padding: 1rem 1rem 3rem;
   }
   .Service h3 {
     font-weight: 700;
