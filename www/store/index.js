@@ -4,6 +4,7 @@ export const state = {
   pages: [],
   navigation: [],
   services: [],
+  events: [],
 };
 
 export const mutations = {
@@ -13,6 +14,9 @@ export const mutations = {
   addService(currentState, service) {
     currentState.services.push(service);
   },
+  addEvent(currentState, event) {
+    currentState.events.push(event);
+  },
   addNavigation(currentState, navigation) {
     currentState.navigation = navigation;
   },
@@ -20,7 +24,8 @@ export const mutations = {
 
 export const actions = {
   nuxtServerInit({ commit }) {
-    const promise = contentfulClient.getEntries({ content_type: 'page' }).then((response) => {
+    // Pages
+    const promise = contentfulClient.getEntries({ content_type: 'page', include: 0 }).then((response) => {
       if (response.items.length === 0) { return; }
       response.items.forEach((item) => {
         commit('addPage', {
@@ -30,6 +35,8 @@ export const actions = {
         });
       });
     })
+
+    // Navigation
     .then(() => (
       contentfulClient
         .getEntries({ 'sys.id': 'xdSWiS7rYy4WE0OOk0Q6I' })
@@ -44,16 +51,32 @@ export const actions = {
           commit('addNavigation', navigation);
         })
       ))
+
+    // Services
     .then(() => (
       contentfulClient
-        .getEntries({ content_type: 'service' })
+        .getEntries({ content_type: 'service', include: 0 })
         .then((response) => {
           if (response.items.length === 0) { return; }
           response.items.forEach((item) => {
             commit('addService', {
               id: item.sys.id,
               path: item.fields.path,
-              title: item.fields.title,
+            });
+          });
+        })
+      ))
+
+    // Events
+    .then(() => (
+      contentfulClient
+        .getEntries({ content_type: 'event', include: 0 })
+        .then((response) => {
+          if (response.items.length === 0) { return; }
+          response.items.forEach((item) => {
+            commit('addEvent', {
+              id: item.sys.id,
+              path: item.fields.path,
             });
           });
         })

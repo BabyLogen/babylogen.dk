@@ -16,6 +16,11 @@
         v-bind="section.fields"
         class="Page-section"
       />
+      <events
+        v-if="section.sys.contentType.sys.id === 'events'"
+        v-bind="section.fields"
+        class="Page-section"
+      />
       <social-media-links
         v-if="section.sys.contentType.sys.id === 'socialMediaList'"
         v-bind="section.fields"
@@ -29,6 +34,7 @@
 import Banner from '../compositions/Banner.vue';
 import ContentBox from '../compositions/ContentBox.vue';
 import Services from '../compositions/Services.vue';
+import Events from '../compositions/Events.vue';
 import SocialMediaLinks from '../compositions/SocialMediaLinks.vue';
 
 export default {
@@ -36,6 +42,7 @@ export default {
     Banner,
     ContentBox,
     Services,
+    Events,
     SocialMediaLinks,
   },
   props: {

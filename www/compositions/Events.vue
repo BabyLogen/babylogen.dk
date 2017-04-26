@@ -1,27 +1,27 @@
 <template>
   <grid-container>
     <grid-column xs="12">
-      <h2 class="Services-header">{{header}}</h2>
-      <p class="Services-description">{{description}}</p>
+      <h2 class="Events-header">{{header}}</h2>
+      <p class="Events-description">{{description}}</p>
     </grid-column>
     <grid-column
-      v-for="(item, index) in items"
+      v-for="(event, index) in events"
       xs="12"
       sm="6"
       md="4"
       lg="3"
-      class="Services-item"
-      :key="item.sys.id"
-      :class="`Services-item--col-${index % 4}`"
+      class="Events-item"
+      :key="event.sys.id"
+      :class="`Events-item--col-${index % 4}`"
     >
-      <service v-bind="item.fields" />
+      <event v-bind="event.fields" />
     </grid-column>
     <grid-column
       xs="12"
       sm="6"
       md="4"
       lg="3"
-      class="Services-item Services-item--cta"
+      class="Events-item Events-item--cta"
     >
       <div>
         <custom-button :to="`/${buttonLink.fields.path}/`" width="auto">
@@ -33,66 +33,70 @@
 </template>
 
 <script>
-import Service from '../components/Service.vue';
+import Event from '../components/Event.vue';
 import GridContainer from '../elements/GridContainer.vue';
 import GridColumn from '../elements/GridColumn.vue';
 import CustomButton from '../elements/CustomButton.vue';
+import fetchCommingEvents from '../assets/js/fetch/comming-events';
 
 export default {
   components: {
     GridContainer,
     GridColumn,
     CustomButton,
-    Service,
+    Event,
   },
   props: {
     header: String,
     description: String,
-    items: Array,
     buttonText: String,
     buttonLink: Object,
+  },
+  data() {
+    return {
+      events: [],
+    };
+  },
+  created() {
+    return fetchCommingEvents().then((events) => {
+      this.events = events;
+    });
   },
 };
 </script>
 
 <style>
-  .Services-header {
+  .Events-header {
     font-size: 2rem;
     font-weight: 300;
     text-transform: uppercase;
   }
-  .Services-description {
+  .Events-description {
     margin-bottom: 1rem;
   }
 
-  .Services-item {
+  .Events-item {
     padding: 0;
   }
-  .Services-item--col-0 {
+  .Events-item--col-0 {
     background-color: var(--color-grey-90);
   }
-  .Services-item--col-1 {
+  .Events-item--col-1 {
     background-color: var(--color-grey-85);
   }
-  .Services-item--col-2 {
+  .Events-item--col-2 {
     background-color: var(--color-grey-80);
   }
-  .Services-item--col-3 {
+  .Events-item--col-3 {
     background-color: var(--color-grey-75);
   }
-  .Services-item--cta {
+  .Events-item--cta {
     background-color: var(--color-primary);
     text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     min-height: 14rem;
-  }
-  @media (min-width: 768px) {
-  }
-  @media (min-width: 992px) {
-  }
-  @media (min-width: 1200px) {
   }
 
 </style>
