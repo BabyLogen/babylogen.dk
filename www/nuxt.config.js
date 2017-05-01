@@ -62,7 +62,13 @@ module.exports = {
         // Services
         .then(() => contentfulClient.getEntries({ content_type: 'service' }))
         .then(response => (
-          response.items.forEach(item => routes.push(`/ydelser/${item.fields.path}/`))
+          response.items.forEach(item => routes.push(`/vi-tilbyder/${item.fields.path}/`))
+        ))
+
+        // Events
+        .then(() => contentfulClient.getEntries({ content_type: 'event' }))
+        .then(response => (
+          response.items.forEach(item => routes.push(`/events/${item.fields.path}/`))
         ))
 
         .then(() => routes);
