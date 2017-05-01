@@ -16,7 +16,7 @@ export default {
   computed: mapState(['meta', 'page']),
   head: headPage,
   fetch({ store, error }) {
-    const { id } = find(store.state.pages, { path: 'ydelser' });
+    const { id } = find(store.state.pages, { path: 'vi-tilbyder' });
     return fetchPage({ id, store, error });
   },
 };

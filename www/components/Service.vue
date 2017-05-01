@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="`/ydelser/${path}/`" class="Service">
+  <nuxt-link :to="`/vi-tilbyder/${path}/`" class="Service">
     <grid-container class="Service-container">
       <grid-column xs="3" sm="12" class="Service-column">
         <div class="Service-image"
