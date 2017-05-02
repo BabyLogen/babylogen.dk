@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-for="section in page.fields.sections">
+    <section v-for="section in page.fields.sections"  :key="page.sys.id">
       <banner
         v-if="section.sys.contentType.sys.id === 'banner'"
         v-bind="section.fields"
@@ -26,6 +26,16 @@
         v-bind="section.fields"
         class="Page-section"
       />
+      <image-box
+        v-if="section.sys.contentType.sys.id === 'imageBox'"
+        v-bind="section.fields"
+        class="Page-section"
+      />
+      <combined-modules
+        v-if="section.sys.contentType.sys.id === 'combinedModules'"
+        v-bind="section.fields"
+        class="Page-section"
+      />
     </section>
   </div>
 </template>
@@ -36,6 +46,8 @@ import ContentBox from '../compositions/ContentBox.vue';
 import Services from '../compositions/Services.vue';
 import Events from '../compositions/Events.vue';
 import SocialMediaLinks from '../compositions/SocialMediaLinks.vue';
+import CombinedModules from '../compositions/CombinedModules.vue';
+import ImageBox from '../components/ImageBox.vue';
 
 export default {
   components: {
@@ -44,6 +56,8 @@ export default {
     Services,
     Events,
     SocialMediaLinks,
+    CombinedModules,
+    ImageBox,
   },
   props: {
     page: { type: Object },

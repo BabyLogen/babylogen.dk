@@ -100,7 +100,6 @@ export default {
   padding-right: 0.5rem;
 }
 /* Width */
-.GridColumn--width-0-sm { display: block; }
 .GridColumn--width-fit-xs { flex: 1 0 auto; }
 .GridColumn--width-expand-xs { flex: 0 0 auto; }
 .GridColumn--width-0-xs { display: none; }
@@ -133,23 +132,21 @@ export default {
 .GridColumn--none-xs { order: 0; }
 
 @media (min-width: 768px) {
-  .GridColumn--width-0-xs { display: block; }
-  .GridColumn--width-0-md { display: block; }
-  .GridColumn--width-fit-sm { flex: 1 0 auto; }
-  .GridColumn--width-expand-sm { flex: 0 0 auto; }
+  .GridColumn--width-fit-sm { flex: 1 0 auto; display: block; }
+  .GridColumn--width-expand-sm { flex: 0 0 auto; display: block; }
   .GridColumn--width-0-sm { display: none; }
-  .GridColumn--width-1-sm { flex: 0 0 8.3333%; }
-  .GridColumn--width-2-sm { flex: 0 0 16.6666%; }
-  .GridColumn--width-3-sm { flex: 0 0 25%; }
-  .GridColumn--width-4-sm { flex: 0 0 33.3333%; }
-  .GridColumn--width-5-sm { flex: 0 0 41.6666%; }
-  .GridColumn--width-6-sm { flex: 0 0 50%; }
-  .GridColumn--width-7-sm { flex: 0 0 58.3333%; }
-  .GridColumn--width-8-sm { flex: 0 0 66.6666%; }
-  .GridColumn--width-9-sm { flex: 0 0 75%; }
-  .GridColumn--width-10-sm { flex: 0 0 83.3333%; }
-  .GridColumn--width-11-sm { flex: 0 0 91.6666%; }
-  .GridColumn--width-12-sm { flex: 0 0 100%; }
+  .GridColumn--width-1-sm { flex: 0 0 8.3333%; display: block; }
+  .GridColumn--width-2-sm { flex: 0 0 16.6666%; display: block; }
+  .GridColumn--width-3-sm { flex: 0 0 25%; display: block; }
+  .GridColumn--width-4-sm { flex: 0 0 33.3333%; display: block; }
+  .GridColumn--width-5-sm { flex: 0 0 41.6666%; display: block; }
+  .GridColumn--width-6-sm { flex: 0 0 50%; display: block; }
+  .GridColumn--width-7-sm { flex: 0 0 58.3333%; display: block; }
+  .GridColumn--width-8-sm { flex: 0 0 66.6666%; display: block; }
+  .GridColumn--width-9-sm { flex: 0 0 75%; display: block; }
+  .GridColumn--width-10-sm { flex: 0 0 83.3333%; display: block; }
+  .GridColumn--width-11-sm { flex: 0 0 91.6666%; display: block; }
+  .GridColumn--width-12-sm { flex: 0 0 100%; display: block; }
   .GridColumn--offset-0-sm { margin-left: 0%; }
   .GridColumn--offset-1-sm { margin-left: 8.3333%; }
   .GridColumn--offset-2-sm { margin-left: 16.6666%; }
@@ -168,23 +165,21 @@ export default {
 }
 
 @media (min-width: 992px) {
-  .GridColumn--width-0-sm { display: block; }
-  .GridColumn--width-0-lg { display: block; }
-  .GridColumn--width-fit-md { flex: 1 0 auto; }
-  .GridColumn--width-expand-md { flex: 0 0 auto; }
-  .GridColumn--width-0-md { display: none; }
-  .GridColumn--width-1-md { flex: 0 0 8.3333%; }
-  .GridColumn--width-2-md { flex: 0 0 16.6666%; }
-  .GridColumn--width-3-md { flex: 0 0 25%; }
-  .GridColumn--width-4-md { flex: 0 0 33.3333%; }
-  .GridColumn--width-5-md { flex: 0 0 41.6666%; }
-  .GridColumn--width-6-md { flex: 0 0 50%; }
-  .GridColumn--width-7-md { flex: 0 0 58.3333%; }
-  .GridColumn--width-8-md { flex: 0 0 66.6666%; }
-  .GridColumn--width-9-md { flex: 0 0 75%; }
-  .GridColumn--width-10-md { flex: 0 0 83.3333%; }
-  .GridColumn--width-11-md { flex: 0 0 91.6666%; }
-  .GridColumn--width-12-md { flex: 0 0 100%; }
+  .GridColumn--width-fit-md { flex: 1 0 auto; display: block; }
+  .GridColumn--width-expand-md { flex: 0 0 auto; display: block; }
+  .GridColumn--width-0-md { display: none; display: block; }
+  .GridColumn--width-1-md { flex: 0 0 8.3333%; display: block; }
+  .GridColumn--width-2-md { flex: 0 0 16.6666%; display: block; }
+  .GridColumn--width-3-md { flex: 0 0 25%; display: block; }
+  .GridColumn--width-4-md { flex: 0 0 33.3333%; display: block; }
+  .GridColumn--width-5-md { flex: 0 0 41.6666%; display: block; }
+  .GridColumn--width-6-md { flex: 0 0 50%; display: block; }
+  .GridColumn--width-7-md { flex: 0 0 58.3333%; display: block; }
+  .GridColumn--width-8-md { flex: 0 0 66.6666%; display: block; }
+  .GridColumn--width-9-md { flex: 0 0 75%; display: block; }
+  .GridColumn--width-10-md { flex: 0 0 83.3333%; display: block; }
+  .GridColumn--width-11-md { flex: 0 0 91.6666%; display: block; }
+  .GridColumn--width-12-md { flex: 0 0 100%; display: block; }
   .GridColumn--offset-0-md { margin-left: 0%; }
   .GridColumn--offset-1-md { margin-left: 8.3333%; }
   .GridColumn--offset-2-md { margin-left: 16.6666%; }
@@ -203,22 +198,21 @@ export default {
 }
 
 @media (min-width: 1200px) {
-  .GridColumn--width-0-md { display: block; }
-  .GridColumn--width-fit-lg { flex: 1 0 auto; }
-  .GridColumn--width-expand-lg { flex: 0 0 auto; }
+  .GridColumn--width-fit-lg { flex: 1 0 auto; display: block; }
+  .GridColumn--width-expand-lg { flex: 0 0 auto; display: block; }
   .GridColumn--width-0-lg { display: none; }
-  .GridColumn--width-1-lg { flex: 0 0 8.3333%; }
-  .GridColumn--width-2-lg { flex: 0 0 16.6666%; }
-  .GridColumn--width-3-lg { flex: 0 0 25%; }
-  .GridColumn--width-4-lg { flex: 0 0 33.3333%; }
-  .GridColumn--width-5-lg { flex: 0 0 41.6666%; }
-  .GridColumn--width-6-lg { flex: 0 0 50%; }
-  .GridColumn--width-7-lg { flex: 0 0 58.3333%; }
-  .GridColumn--width-8-lg { flex: 0 0 66.6666%; }
-  .GridColumn--width-9-lg { flex: 0 0 75%; }
-  .GridColumn--width-10-lg { flex: 0 0 83.3333%; }
-  .GridColumn--width-11-lg { flex: 0 0 91.6666%; }
-  .GridColumn--width-12-lg { flex: 0 0 100%; }
+  .GridColumn--width-1-lg { flex: 0 0 8.3333%; display: block; }
+  .GridColumn--width-2-lg { flex: 0 0 16.6666%; display: block; }
+  .GridColumn--width-3-lg { flex: 0 0 25%; display: block; }
+  .GridColumn--width-4-lg { flex: 0 0 33.3333%; display: block; }
+  .GridColumn--width-5-lg { flex: 0 0 41.6666%; display: block; }
+  .GridColumn--width-6-lg { flex: 0 0 50%; display: block; }
+  .GridColumn--width-7-lg { flex: 0 0 58.3333%; display: block; }
+  .GridColumn--width-8-lg { flex: 0 0 66.6666%; display: block; }
+  .GridColumn--width-9-lg { flex: 0 0 75%; display: block; }
+  .GridColumn--width-10-lg { flex: 0 0 83.3333%; display: block; }
+  .GridColumn--width-11-lg { flex: 0 0 91.6666%; display: block; }
+  .GridColumn--width-12-lg { flex: 0 0 100%; display: block; }
   .GridColumn--offset-0-lg { margin-left: 0%; }
   .GridColumn--offset-1-lg { margin-left: 8.3333%; }
   .GridColumn--offset-2-lg { margin-left: 16.6666%; }
