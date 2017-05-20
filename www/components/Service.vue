@@ -31,6 +31,7 @@ export default {
     summary: String,
     price: String,
     path: String,
+    description: String,
   },
 };
 </script>
