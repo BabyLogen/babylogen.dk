@@ -17,9 +17,9 @@
         <template v-for="link in navigation">
           <nav-link v-on:click.native="closeNavigation" :to="link.path" class="Navigation-link">{{link.title}}</nav-link>
         </template>
-        <nav-link v-on:click.native="closeNavigation" to="/kurv/" class="Navigation-basket">
+        <!--<nav-link v-on:click.native="closeNavigation" to="/kurv/" class="Navigation-basket">
           <span>Kurv (0)</span>
-        </nav-link>
+        </nav-link>-->
         <nav-link v-on:click.native="toggleNavigation" class="Navigation-menu">
           <span>{{open ? 'Luk' : 'Menu'}}</span>
         </nav-link>
@@ -28,11 +28,11 @@
         <template v-for="link in navigation">
           <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" :to="link.path">{{ link.title }}</nav-link></div>
         </template>
-        <div class="Navigation-mobile-link Navigation-mobile-link--basket">
+        <!--<div class="Navigation-mobile-link Navigation-mobile-link--basket">
           <nav-link v-on:click.native="closeNavigation" to="/kurv/">
             <span>Kurv (0)</span>
           </nav-link>
-        </div>
+        </div>-->
       </grid-column>
     </grid-container>
   </div>

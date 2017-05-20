@@ -5,7 +5,7 @@
       xs="12"
       sm="6"
       class="Splits-item"
-      :class="`Splits-item--col-${i}`"
+      :class="`Splits-item--col-${i % 4}`"
       :key="module.sys.id"
     >
         <content-box

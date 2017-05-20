@@ -17,9 +17,9 @@
         `ContentBox-content--align-${align}`,
       ]">
         <h2 v-if="header" class="ContentBox-header">{{header}}</h2>
-        <p v-if="body">{{body}}</p>
+        <span v-if="body" v-html="htmlBody"></span>
         <p v-if="buttonLink && buttonText"class="ContentBox-button">
-          <custom-button :type="buttonType" :to="`/test/`">{{buttonText}}</custom-button>
+          <custom-button :type="buttonType" :to="`/${buttonLink.fields.path}/`">{{buttonText}}</custom-button>
         </p>
       </div>
     </grid-column>
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import marked from 'marked';
 import GridContainer from '../elements/GridContainer.vue';
 import GridColumn from '../elements/GridColumn.vue';
 import CustomButton from '../elements/CustomButton.vue';
@@ -75,6 +76,9 @@ export default {
         return 'ghost-primary';
       }
       return 'ghost';
+    },
+    htmlBody() {
+      return marked(this.body);
     },
     grid() {
       let grid = {

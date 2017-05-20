@@ -36,6 +36,10 @@
         v-bind="section.fields"
         class="Page-section"
       />
+      <splits
+        v-if="section.sys.contentType.sys.id === 'splits'"
+        v-bind="section.fields"
+      />
     </section>
   </div>
 </template>
@@ -47,6 +51,7 @@ import Services from '../compositions/Services.vue';
 import Events from '../compositions/Events.vue';
 import SocialMediaLinks from '../compositions/SocialMediaLinks.vue';
 import CombinedModules from '../compositions/CombinedModules.vue';
+import Splits from '../compositions/Splits.vue';
 import ImageBox from '../components/ImageBox.vue';
 
 export default {
@@ -58,6 +63,7 @@ export default {
     SocialMediaLinks,
     CombinedModules,
     ImageBox,
+    Splits,
   },
   props: {
     page: { type: Object },
