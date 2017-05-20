@@ -11,9 +11,8 @@
     "contentful": "latest",
     "gh-pages": "latest",
     "lodash": "latest",
-    "marked": "^0.3.6",
-    "nuxt": "latest",
-    "offline-plugin": "latest"
+    "marked": "latest",
+    "nuxt": "latest"
   },
   "scripts": {
     "dev": "nuxt",
