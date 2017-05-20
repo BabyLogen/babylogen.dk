@@ -43,9 +43,11 @@ module.exports = {
       }
     },
   },
-  vendor: ['contentful', 'lodash/find'],
+  offline: true,
+  vendor: ['contentful', 'lodash/find', 'marked'],
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
+    { src: '~plugins/offline.js', ssr: false },
   ],
   generate: {
     routes() {

@@ -17,7 +17,7 @@
         `ContentBox-content--align-${align}`,
       ]">
         <h2 v-if="header" class="ContentBox-header">{{header}}</h2>
-        <span v-if="body" v-html="htmlBody"></span>
+        <div v-if="body" v-html="htmlBody"/>
         <p v-if="buttonLink && buttonText"class="ContentBox-button">
           <custom-button :type="buttonType" :to="`/${buttonLink.fields.path}/`">{{buttonText}}</custom-button>
         </p>
@@ -78,7 +78,7 @@ export default {
       return 'ghost';
     },
     htmlBody() {
-      return marked(this.body);
+      return this.body ? marked(this.body) : '<span></span>';
     },
     grid() {
       let grid = {

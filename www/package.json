@@ -12,7 +12,8 @@
     "gh-pages": "latest",
     "lodash": "latest",
     "marked": "latest",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "offline-plugin": "latest"
   },
   "scripts": {
     "dev": "nuxt",
