@@ -1,7 +1,7 @@
 <template>
   <grid-container class="Image">
     <grid-column xs="12" class="Image-container" :style="{
-      'background-image': `url(${image.fields.file.url}?fm=jpg&fl=progressive&w=1472)`
+      'background-image': `url(${image.fields.file.url}?fm=jpg&fl=progressive&w=${imageWidth})`
     }">
     </grid-column>
   </grid-container>
@@ -18,6 +18,15 @@ export default {
   },
   props: {
     image: Object,
+    fullWidth: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  computed: {
+    imageWidth() {
+      return this.fullWidth ? 1472 : 736;
+    },
   },
 };
 </script>

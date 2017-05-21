@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-for="section in page.fields.sections"  :key="page.sys.id">
+    <section v-for="section in page.fields.sections"  :key="section.sys.id">
       <banner
         v-if="section.sys.contentType.sys.id === 'banner'"
         v-bind="section.fields"
@@ -39,6 +39,7 @@
       <splits
         v-if="section.sys.contentType.sys.id === 'splits'"
         v-bind="section.fields"
+        class="Page-section"
       />
     </section>
   </div>

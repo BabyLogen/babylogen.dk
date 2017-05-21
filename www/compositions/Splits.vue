@@ -15,6 +15,7 @@
         <image-box
           v-if="module.sys.contentType.sys.id === 'imageBox'"
           v-bind="module.fields"
+          :fullWidth="false"
         />
     </grid-column>
   </grid-container>
