@@ -24,9 +24,12 @@ export default {
 
 <style>
   .Image-container {
-    padding-bottom: 40%;
+    padding-bottom: 50%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  }
+  .Splits .Image-container {
+    padding-bottom: 100%;
   }
 </style>

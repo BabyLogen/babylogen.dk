@@ -78,7 +78,7 @@ export default {
       return 'ghost';
     },
     htmlBody() {
-      return this.body ? marked(this.body) : '<span></span>';
+      return this.body ? marked(this.body, { breaks: true }) : '<span></span>';
     },
     grid() {
       let grid = {
@@ -112,10 +112,23 @@ export default {
 </script>
 
 <style>
+
+  .ContentBox a {
+    color: var(--color-black);
+  }
+
+  .ContentBox ul {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
   /* Themes */
   .ContentBox--theme-dark {
     background-color: var(--color-black);
     color: var(--color-white);
+  }
+  .ContentBox--theme-dark a {
+    color: var(--color-primary);
   }
   .ContentBox--theme-light {
     background-color: var(--color-white);
