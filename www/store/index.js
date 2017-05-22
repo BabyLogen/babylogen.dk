@@ -1,13 +1,11 @@
 import contentfulClient from '../assets/js/contentful-client';
 
-export function state() {
-  return {
-    pages: [],
-    navigation: [],
-    services: [],
-    events: [],
-  };
-}
+export const state = {
+  pages: [],
+  navigation: [],
+  services: [],
+  events: [],
+};
 
 export const mutations = {
   addPage(currentState, page) {
