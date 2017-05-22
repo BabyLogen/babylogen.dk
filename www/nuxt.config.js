@@ -1,6 +1,11 @@
 const contentfulClient = require('./assets/js/contentful-client');
+const NuxtHelpers = require('nuxt-helpers');
 
-module.exports = {
+module.exports = NuxtHelpers([
+  'optimize',
+  'offline',
+  'manifest',
+], {
   /*
   ** Headers of the page
   */
@@ -26,6 +31,13 @@ module.exports = {
   */
   loading: { color: '#7DFAD3' },
   /*
+  ** Customize manifest.json
+  */
+  manifest: {
+    name: 'Babylogen',
+    theme_color: '#7DFAD3',
+  },
+  /*
   ** Build configuration
   */
   build: {
@@ -43,11 +55,9 @@ module.exports = {
       }
     },
   },
-  offline: true,
   vendor: ['contentful', 'lodash/find', 'marked'],
   plugins: [
-    { src: '~/plugins/detect-touch', ssr: false },
-    { src: '~plugins/offline.js', ssr: false },
+    { src: '~plugins/detect-touch', ssr: false },
   ],
   generate: {
     routes() {
@@ -75,4 +85,4 @@ module.exports = {
       return Promise.resolve(promise);
     },
   },
-};
+});
