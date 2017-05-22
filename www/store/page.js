@@ -1,7 +1,9 @@
-export const state = {
-  fields: {},
-  sys: {},
-};
+export function state() {
+  return {
+    fields: {},
+    sys: {},
+  };
+}
 
 export const mutations = {
   set(currentState, page) {
