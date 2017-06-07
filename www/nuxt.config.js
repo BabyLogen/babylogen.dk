@@ -43,11 +43,17 @@ module.exports = {
       }
     },
   },
-  offline: true,
+  manifest: {
+    name: 'BabyLogen',
+    description: 'HackerNews clone built with Nuxt.js',
+    theme_color: '#7DFAD3'
+  },
   vendor: ['contentful', 'lodash/find', 'marked'],
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
-    { src: '~plugins/offline.js', ssr: false },
+  ],
+  modules: [
+    '@nuxtjs/pwa',
   ],
   generate: {
     routes() {

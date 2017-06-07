@@ -1,7 +1,9 @@
-export const state = {
-  title: 'BabyLogen',
-  description: '',
-};
+export function state() {
+  return {
+    title: 'BabyLogen',
+    description: '',
+  };
+}
 
 export const mutations = {
   set(currentState, meta) {

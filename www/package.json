@@ -8,12 +8,12 @@
     "node": "latest"
   },
   "dependencies": {
+    "@nuxtjs/pwa": "latest",
     "contentful": "latest",
     "gh-pages": "latest",
     "lodash": "latest",
     "marked": "latest",
-    "nuxt": "latest",
-    "offline-plugin": "latest"
+    "nuxt": "latest"
   },
   "scripts": {
     "dev": "nuxt",
