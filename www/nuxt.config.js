@@ -46,7 +46,7 @@ module.exports = {
   manifest: {
     name: 'BabyLogen',
     description: 'HackerNews clone built with Nuxt.js',
-    theme_color: '#7DFAD3'
+    theme_color: '#7DFAD3',
   },
   vendor: ['contentful', 'lodash/find', 'marked'],
   plugins: [
