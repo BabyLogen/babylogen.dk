@@ -1,7 +1,7 @@
 <template>
   <div
     class="Navigation"
-    :class="{ 'Navigation--collapsed': scrollPosition > 200 }"
+    :class="{ 'Navigation--collapsed': scrollPosition > 144 }"
   >
     <grid-container align="middle">
       <grid-column xs="expand">
