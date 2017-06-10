@@ -66,6 +66,8 @@ export default {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   .Service-price {
     font-weight: 700;

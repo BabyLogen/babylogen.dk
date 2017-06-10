@@ -103,18 +103,18 @@ export default {
 .GridColumn--width-fit-xs { flex: 1 0 auto; }
 .GridColumn--width-expand-xs { flex: 0 0 auto; }
 .GridColumn--width-0-xs { display: none; }
-.GridColumn--width-1-xs { flex: 0 0 8.3333%; }
-.GridColumn--width-2-xs { flex: 0 0 16.6666%; }
-.GridColumn--width-3-xs { flex: 0 0 25%; }
-.GridColumn--width-4-xs { flex: 0 0 33.3333%; }
-.GridColumn--width-5-xs { flex: 0 0 41.6666%; }
-.GridColumn--width-6-xs { flex: 0 0 50%; }
-.GridColumn--width-7-xs { flex: 0 0 58.3333%; }
-.GridColumn--width-8-xs { flex: 0 0 66.6666%; }
-.GridColumn--width-9-xs { flex: 0 0 75%; }
-.GridColumn--width-10-xs { flex: 0 0 83.3333%; }
-.GridColumn--width-11-xs { flex: 0 0 91.6666%; }
-.GridColumn--width-12-xs { flex: 0 0 100%; }
+.GridColumn--width-1-xs { flex: 0 0 8.3333%; max-width: 8.3333%; }
+.GridColumn--width-2-xs { flex: 0 0 16.6666%; max-width: 16.6666%; }
+.GridColumn--width-3-xs { flex: 0 0 25%; max-width: 25%; }
+.GridColumn--width-4-xs { flex: 0 0 33.3333%; max-width: 33.3333%; }
+.GridColumn--width-5-xs { flex: 0 0 41.6666%; max-width: 41.6666%; }
+.GridColumn--width-6-xs { flex: 0 0 50%; max-width: 50%; }
+.GridColumn--width-7-xs { flex: 0 0 58.3333%; max-width: 58.3333%; }
+.GridColumn--width-8-xs { flex: 0 0 66.6666%; max-width: 66.6666%; }
+.GridColumn--width-9-xs { flex: 0 0 75%; max-width: 75%; }
+.GridColumn--width-10-xs { flex: 0 0 83.3333%; max-width: 83.3333%; }
+.GridColumn--width-11-xs { flex: 0 0 91.6666%; max-width: 91.6666%; }
+.GridColumn--width-12-xs { flex: 0 0 100%; max-width: 100%; }
 .GridColumn--offset-0-xs { margin-left: 0%; }
 .GridColumn--offset-1-xs { margin-left: 8.3333%; }
 .GridColumn--offset-2-xs { margin-left: 16.6666%; }
@@ -135,18 +135,18 @@ export default {
   .GridColumn--width-fit-sm { flex: 1 0 auto; display: block; }
   .GridColumn--width-expand-sm { flex: 0 0 auto; display: block; }
   .GridColumn--width-0-sm { display: none; }
-  .GridColumn--width-1-sm { flex: 0 0 8.3333%; display: block; }
-  .GridColumn--width-2-sm { flex: 0 0 16.6666%; display: block; }
-  .GridColumn--width-3-sm { flex: 0 0 25%; display: block; }
-  .GridColumn--width-4-sm { flex: 0 0 33.3333%; display: block; }
-  .GridColumn--width-5-sm { flex: 0 0 41.6666%; display: block; }
-  .GridColumn--width-6-sm { flex: 0 0 50%; display: block; }
-  .GridColumn--width-7-sm { flex: 0 0 58.3333%; display: block; }
-  .GridColumn--width-8-sm { flex: 0 0 66.6666%; display: block; }
-  .GridColumn--width-9-sm { flex: 0 0 75%; display: block; }
-  .GridColumn--width-10-sm { flex: 0 0 83.3333%; display: block; }
-  .GridColumn--width-11-sm { flex: 0 0 91.6666%; display: block; }
-  .GridColumn--width-12-sm { flex: 0 0 100%; display: block; }
+  .GridColumn--width-1-sm { flex: 0 0 8.3333%; max-width: 8.3333%; display: block; }
+  .GridColumn--width-2-sm { flex: 0 0 16.6666%; max-width: 16.6666%; display: block; }
+  .GridColumn--width-3-sm { flex: 0 0 25%; max-width: 25%; display: block; }
+  .GridColumn--width-4-sm { flex: 0 0 33.3333%; max-width: 33.3333%; display: block; }
+  .GridColumn--width-5-sm { flex: 0 0 41.6666%; max-width: 41.6666%; display: block; }
+  .GridColumn--width-6-sm { flex: 0 0 50%; max-width: 50%; display: block; }
+  .GridColumn--width-7-sm { flex: 0 0 58.3333%; max-width: 58.3333%; display: block; }
+  .GridColumn--width-8-sm { flex: 0 0 66.6666%; max-width: 66.6666%; display: block; }
+  .GridColumn--width-9-sm { flex: 0 0 75%; max-width: 75%; display: block; }
+  .GridColumn--width-10-sm { flex: 0 0 83.3333%; max-width: 83.3333%; display: block; }
+  .GridColumn--width-11-sm { flex: 0 0 91.6666%; max-width: 91.6666%; display: block; }
+  .GridColumn--width-12-sm { flex: 0 0 100%; max-width: 100%; display: block; }
   .GridColumn--offset-0-sm { margin-left: 0%; }
   .GridColumn--offset-1-sm { margin-left: 8.3333%; }
   .GridColumn--offset-2-sm { margin-left: 16.6666%; }
@@ -166,20 +166,20 @@ export default {
 
 @media (min-width: 992px) {
   .GridColumn--width-fit-md { flex: 1 0 auto; display: block; }
-  .GridColumn--width-expand-md { flex: 0 0 auto; display: block; }
+  .GridColumn--width-expand-md { flex: 0 0 auto; max-width: auto; display: block; }
   .GridColumn--width-0-md { display: none; display: block; }
-  .GridColumn--width-1-md { flex: 0 0 8.3333%; display: block; }
-  .GridColumn--width-2-md { flex: 0 0 16.6666%; display: block; }
-  .GridColumn--width-3-md { flex: 0 0 25%; display: block; }
-  .GridColumn--width-4-md { flex: 0 0 33.3333%; display: block; }
-  .GridColumn--width-5-md { flex: 0 0 41.6666%; display: block; }
-  .GridColumn--width-6-md { flex: 0 0 50%; display: block; }
-  .GridColumn--width-7-md { flex: 0 0 58.3333%; display: block; }
-  .GridColumn--width-8-md { flex: 0 0 66.6666%; display: block; }
-  .GridColumn--width-9-md { flex: 0 0 75%; display: block; }
-  .GridColumn--width-10-md { flex: 0 0 83.3333%; display: block; }
-  .GridColumn--width-11-md { flex: 0 0 91.6666%; display: block; }
-  .GridColumn--width-12-md { flex: 0 0 100%; display: block; }
+  .GridColumn--width-1-md { flex: 0 0 8.3333%; max-width: 8.3333%; display: block; }
+  .GridColumn--width-2-md { flex: 0 0 16.6666%; max-width: 16.6666%; display: block; }
+  .GridColumn--width-3-md { flex: 0 0 25%; max-width: 25%; display: block; }
+  .GridColumn--width-4-md { flex: 0 0 33.3333%; max-width: 33.3333%; display: block; }
+  .GridColumn--width-5-md { flex: 0 0 41.6666%; max-width: 41.6666%; display: block; }
+  .GridColumn--width-6-md { flex: 0 0 50%; max-width: 50%; display: block; }
+  .GridColumn--width-7-md { flex: 0 0 58.3333%; max-width: 58.3333%; display: block; }
+  .GridColumn--width-8-md { flex: 0 0 66.6666%; max-width: 66.6666%; display: block; }
+  .GridColumn--width-9-md { flex: 0 0 75%; max-width: 75%; display: block; }
+  .GridColumn--width-10-md { flex: 0 0 83.3333%; max-width: 83.3333%; display: block; }
+  .GridColumn--width-11-md { flex: 0 0 91.6666%; max-width: 91.6666%; display: block; }
+  .GridColumn--width-12-md { flex: 0 0 100%; max-width: 100%; display: block; }
   .GridColumn--offset-0-md { margin-left: 0%; }
   .GridColumn--offset-1-md { margin-left: 8.3333%; }
   .GridColumn--offset-2-md { margin-left: 16.6666%; }
@@ -199,20 +199,20 @@ export default {
 
 @media (min-width: 1200px) {
   .GridColumn--width-fit-lg { flex: 1 0 auto; display: block; }
-  .GridColumn--width-expand-lg { flex: 0 0 auto; display: block; }
+  .GridColumn--width-expand-lg { flex: 0 0 auto; max-width: auto; display: block; }
   .GridColumn--width-0-lg { display: none; }
-  .GridColumn--width-1-lg { flex: 0 0 8.3333%; display: block; }
-  .GridColumn--width-2-lg { flex: 0 0 16.6666%; display: block; }
-  .GridColumn--width-3-lg { flex: 0 0 25%; display: block; }
-  .GridColumn--width-4-lg { flex: 0 0 33.3333%; display: block; }
-  .GridColumn--width-5-lg { flex: 0 0 41.6666%; display: block; }
-  .GridColumn--width-6-lg { flex: 0 0 50%; display: block; }
-  .GridColumn--width-7-lg { flex: 0 0 58.3333%; display: block; }
-  .GridColumn--width-8-lg { flex: 0 0 66.6666%; display: block; }
-  .GridColumn--width-9-lg { flex: 0 0 75%; display: block; }
-  .GridColumn--width-10-lg { flex: 0 0 83.3333%; display: block; }
-  .GridColumn--width-11-lg { flex: 0 0 91.6666%; display: block; }
-  .GridColumn--width-12-lg { flex: 0 0 100%; display: block; }
+  .GridColumn--width-1-lg { flex: 0 0 8.3333%; max-width: 8.3333%; display: block; }
+  .GridColumn--width-2-lg { flex: 0 0 16.6666%; max-width: 16.6666%; display: block; }
+  .GridColumn--width-3-lg { flex: 0 0 25%; max-width: 25%; display: block; }
+  .GridColumn--width-4-lg { flex: 0 0 33.3333%; max-width: 33.3333%; display: block; }
+  .GridColumn--width-5-lg { flex: 0 0 41.6666%; max-width: 41.6666%; display: block; }
+  .GridColumn--width-6-lg { flex: 0 0 50%; max-width: 50%; display: block; }
+  .GridColumn--width-7-lg { flex: 0 0 58.3333%; max-width: 58.3333%; display: block; }
+  .GridColumn--width-8-lg { flex: 0 0 66.6666%; max-width: 66.6666%; display: block; }
+  .GridColumn--width-9-lg { flex: 0 0 75%; max-width: 75%; display: block; }
+  .GridColumn--width-10-lg { flex: 0 0 83.3333%; max-width: 83.3333%; display: block; }
+  .GridColumn--width-11-lg { flex: 0 0 91.6666%; max-width: 91.6666%; display: block; }
+  .GridColumn--width-12-lg { flex: 0 0 100%; max-width: 100%; display: block; }
   .GridColumn--offset-0-lg { margin-left: 0%; }
   .GridColumn--offset-1-lg { margin-left: 8.3333%; }
   .GridColumn--offset-2-lg { margin-left: 16.6666%; }
