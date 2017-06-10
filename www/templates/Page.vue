@@ -74,16 +74,16 @@ export default {
 
 <style>
   .Page-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   @media (min-width: 768px) {
     .Page-section {
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
   }
   @media (min-width: 1200px) {
     .Page-section {
-      margin-bottom: 6rem;
+      margin-bottom: 2rem;
     }
   }
 </style>

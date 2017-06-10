@@ -14,10 +14,13 @@
       class="Banner-text"
     >
       <div class="Banner-text-content">
-        {{text}}<br>
-      	<custom-button :to="`/${buttonLink.fields.path}/`" class="Banner-cta">
-          {{buttonText}}
-        </custom-button>
+	{{text}}
+	<template v-if="buttonLink && buttonText">
+	  <br>
+		<custom-button :to="`/${buttonLink.fields.path}/`" class="Banner-cta">
+	    {{buttonText}}
+	  </custom-button>
+	</template>
       </div>
     </grid-column>
   </grid-container>
@@ -56,7 +59,7 @@ export default {
   }
   .Banner-text-content {
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
     padding: 1rem 1.5rem;
   }
@@ -65,14 +68,13 @@ export default {
   }
   @media (min-width: 768px) {
     .Banner-text-content {
-      font-size: 1.5rem;
       padding: 2rem 1.5rem;
     }
   }
   @media (min-width: 992px) {
     .Banner-text-content {
-      font-size: 2rem;
-      padding: 5rem 1.5rem;
+      padding: 4rem 1.5rem;
+      font-size: 1.5rem;
     }
     .Banner-image {
       padding-top: 0;
@@ -80,7 +82,7 @@ export default {
   }
   @media (min-width: 1200px) {
     .Banner-text-content {
-      padding: 10rem 2.5rem;
+      padding: 6rem 2.5rem;
     }
   }
 

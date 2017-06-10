@@ -33,12 +33,12 @@ export default {
 
 <style>
   .Image-container {
-    padding-bottom: 50%;
+    padding-bottom: 35%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
   .Splits .Image-container {
-    padding-bottom: 100%;
+    padding-bottom: 65%;
   }
 </style>

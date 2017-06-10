@@ -91,6 +91,7 @@ export default {
 
   .Navigation-logo {
     margin-left: -1rem;
+    letter-spacing: 0.1rem;
     transition: all 0.25s cubic-bezier(.5,0,.1,1) !important;
   }
   .Navigation-logo.nuxt-link-active,

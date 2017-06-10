@@ -2,7 +2,7 @@
   <grid-container>
     <grid-column xs="12">
       <h2 class="Services-header">{{header}}</h2>
-      <p class="Services-description">{{description}}</p>
+      <p v-if="description" class="Services-description">{{description}}</p>
     </grid-column>
     <grid-column
       v-for="(item, index) in items"
@@ -22,6 +22,7 @@
       md="4"
       lg="3"
       class="Services-item Services-item--cta"
+      v-if="buttonLink && buttonText"
     >
       <div>
         <custom-button :to="`/${buttonLink.fields.path}/`" width="auto">

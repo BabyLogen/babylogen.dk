@@ -25,8 +25,8 @@ export default {
 
 <style>
   .Grid-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /*padding-left: 1rem;
+    padding-right: 1rem;*/
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -38,7 +38,7 @@ export default {
   .Grid-container--middle { align-items: center; }
   .Grid-container--bottom { align-items: flex-end; }
 
-  @media (min-width: 768px) {
+  /*@media (min-width: 768px) {
     .Grid-container {
       padding-left: 2rem;
       padding-right: 2rem;
@@ -55,5 +55,5 @@ export default {
       padding-left: 4rem;
       padding-right: 4rem;
     }
-  }
+  }*/
 </style>

@@ -24,12 +24,6 @@ export default {
             sys: { contentType: { sys: { id: 'combinedModules' } } },
             fields: { modules: [{
               sys: {
-                id: 'image',
-                contentType: { sys: { id: 'imageBox' } },
-              },
-              fields: { image: this.page.fields.image },
-            }, {
-              sys: {
                 id: 'mainContent',
                 contentType: { sys: { id: 'contentBox' } },
               },
@@ -38,8 +32,15 @@ export default {
                 header: this.page.fields.header,
                 body: this.page.fields.summary,
                 align: 'center',
+		spacing: 'little',
               },
             }, {
+	      sys: {
+		id: 'image',
+		contentType: { sys: { id: 'imageBox' } },
+	      },
+	      fields: { image: this.page.fields.image },
+	    }, {
               sys: { contentType: { sys: { id: 'splits' } } },
               fields: { modules: [{
                 sys: {
