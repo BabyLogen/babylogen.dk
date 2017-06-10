@@ -32,15 +32,15 @@ export default {
                 header: this.page.fields.header,
                 body: this.page.fields.summary,
                 align: 'center',
-		spacing: 'little',
+                spacing: 'little',
               },
             }, {
-	      sys: {
-		id: 'image',
-		contentType: { sys: { id: 'imageBox' } },
-	      },
-	      fields: { image: this.page.fields.image },
-	    }, {
+              sys: {
+                id: 'image',
+                contentType: { sys: { id: 'imageBox' } },
+              },
+              fields: { image: this.page.fields.image },
+            }, {
               sys: { contentType: { sys: { id: 'splits' } } },
               fields: { modules: [{
                 sys: {
