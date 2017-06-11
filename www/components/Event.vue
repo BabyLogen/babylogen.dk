@@ -20,6 +20,8 @@
 <script>
 import GridContainer from '../elements/GridContainer.vue';
 import GridColumn from '../elements/GridColumn.vue';
+import getDate from '../assets/js/utils/get-date';
+import getInterval from '../assets/js/utils/get-interval';
 
 export default {
   components: {
@@ -36,36 +38,10 @@ export default {
   },
   computed: {
     date() {
-      const startDate = new Date(this.startDate);
-      const year = startDate.getFullYear();
-      const date = startDate.getDate();
-      const month = [
-        'januar',
-        'februar',
-        'marts',
-        'april',
-        'maj',
-        'juni',
-        'juli',
-        'august',
-        'september',
-        'oktober',
-        'november',
-        'december',
-      ][startDate.getMonth()];
-      return `${date}. ${month} ${year}`;
+      return getDate(this.startDate);
     },
     time() {
-      const startDate = new Date(this.startDate);
-      const endDate = new Date(this.endDate);
-
-      const startHours = `${(startDate.getHours() < 10) ? '0' : ''}${startDate.getHours()}`;
-      const startMinutes = `${(startDate.getMinutes() < 10) ? '0' : ''}${startDate.getMinutes()}`;
-
-      const endHours = `${(endDate.getHours() < 10) ? '0' : ''}${endDate.getHours()}`;
-      const endMinutes = `${(endDate.getMinutes() < 10) ? '0' : ''}${endDate.getMinutes()}`;
-
-      return `${startHours}:${startMinutes} - ${endHours}:${endMinutes}`;
+      return getInterval(this.startDate, this.endDate);
     },
   },
 };
