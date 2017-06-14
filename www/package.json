@@ -8,7 +8,7 @@
     "node": "latest"
   },
   "dependencies": {
-    "@nuxtjs/google-tag-manager": "latest",
+    "@nuxtjs/google-analytics": "latest",
     "@nuxtjs/pwa": "latest",
     "contentful": "latest",
     "gh-pages": "latest",

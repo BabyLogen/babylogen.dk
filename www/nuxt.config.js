@@ -54,7 +54,7 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/pwa',
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-N7BVG7X' }],
+    ['@nuxtjs/google-analytics', { ua: 'UA-101008422-1' }],
   ],
   generate: {
     routes() {
