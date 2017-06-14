@@ -73,7 +73,8 @@ export default {
   computed: {
     buttonType() {
       if (this.theme === 'dark') {
-        return this.$store.state.experiments.contentBoxButtonType.variant;
+        const experiment = this.$store.state.experiments.contentBoxButtonType;
+        return experiment.variants[experiment.index];
       }
       return 'ghost';
     },

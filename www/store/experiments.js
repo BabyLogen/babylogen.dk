@@ -2,7 +2,7 @@ function generate(variants, id) {
   const index = Math.floor(Math.random() * variants.length);
   return {
     index,
-    variant: variants[index],
+    variants,
     id,
   };
 }
