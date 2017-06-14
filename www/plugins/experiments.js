@@ -12,5 +12,6 @@ export default ({ store }) => {
   Object.keys(store.state.experiments).forEach((key) => {
     const experiment = store.state.experiments[key];
     window.ga('set', 'exp', `${experiment.id}.${experiment.variant}`);
+    console.log('experiment', `${experiment.id}.${experiment.variant}`);
   });
 };
