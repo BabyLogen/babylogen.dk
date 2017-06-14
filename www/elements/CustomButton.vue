@@ -63,4 +63,9 @@ export default {
     background-color: var(--color-white);
     border-color: var(--color-white);
   }
+
+  .CustomButton--primary {
+    color: var(--color-black) !important;
+    background: var(--color-primary);
+  }
 </style>

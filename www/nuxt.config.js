@@ -49,12 +49,13 @@ module.exports = {
     theme_color: '#7DFAD3',
   },
   vendor: ['contentful', 'lodash/find', 'marked'],
-  plugins: [
-    { src: '~/plugins/detect-touch', ssr: false },
-  ],
   modules: [
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', { ua: 'UA-101008422-1' }],
+  ],
+  plugins: [
+    { src: '~/plugins/detect-touch', ssr: false },
+    { src: '~/plugins/experiments', ssr: false },
   ],
   generate: {
     routes() {
