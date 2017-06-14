@@ -8,7 +8,7 @@ window.ga.l = 1 * new Date();
 function chooseVariant(experiment) {
   const localStorageKey = `experiment-${experiment.id}`;
   const local = localStorage.getItem(localStorageKey);
-  if (local) {
+  if (local && local < experiment.variants.length) {
     return local;
   }
   const index = Math.floor(Math.random() * experiment.variants.length);
