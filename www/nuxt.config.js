@@ -52,6 +52,7 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', { ua: 'UA-101008422-1' }],
+    ['./modules/hotjar', { hjid: 537556, hjsv: 5 }],
   ],
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
