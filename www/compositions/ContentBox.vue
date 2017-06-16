@@ -19,7 +19,7 @@
         <h2 v-if="header" class="ContentBox-header">{{header}}</h2>
         <div v-if="body" v-html="htmlBody"/>
 	<p v-if="buttonLink && buttonText" class="ContentBox-button">
-          <custom-button :type="buttonType" :to="`/${buttonLink.fields.path}/`">{{buttonText}}</custom-button>
+          <custom-button :type="calculatedButtonType" :to="`/${buttonLink.fields.path}/`">{{buttonText}}</custom-button>
         </p>
       </div>
     </grid-column>
@@ -69,12 +69,15 @@ export default {
     body: String,
     buttonText: String,
     buttonLink: Object,
+    buttonType: String,
   },
   computed: {
-    buttonType() {
+    calculatedButtonType() {
+      if (this.buttonType) {
+        return this.buttonType;
+      }
       if (this.theme === 'dark') {
-        const experiment = this.$store.state.experiments.contentBoxButtonType;
-        return experiment.variants[experiment.index];
+        return 'ghost-primary';
       }
       return 'ghost';
     },

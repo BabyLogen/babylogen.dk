@@ -17,6 +17,14 @@ export default {
   },
   computed: {
     ...mapState(['meta', 'page']),
+    experiments() {
+      const experiments = this.$store.state.experiments;
+      return {
+        buttonType: experiments.contentBoxButtonType.variants[
+          experiments.contentBoxButtonType.index
+        ],
+      };
+    },
     mappedPage() {
       return {
         fields: {
@@ -61,6 +69,7 @@ export default {
                   header: this.page.fields.price,
                   buttonText: 'Book nu',
                   buttonLink: { fields: { path: '#' } },
+                  buttonType: this.experiments.buttonType,
                 },
               }] },
             }] },
@@ -73,6 +82,12 @@ export default {
   fetch({ store, params, error }) {
     const { id } = find(store.state.services, { path: params.service });
     return fetchService({ id, store, error });
+  },
+  mounted() {
+    if (window.hj) {
+      const experiment = this.$store.state.experiments.contentBoxButtonType;
+      window.hj('trigger', `${experiment.id}_${experiment.index}`);
+    }
   },
 };
 </script>
