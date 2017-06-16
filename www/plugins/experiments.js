@@ -5,6 +5,11 @@ window.ga = window.ga || function ga() {
 };
 window.ga.l = 1 * new Date();
 
+// Hotjar boilerplate
+window.hj = window.hj || function hj() {
+  (window.hj.q = window.hj.q || []).push(arguments); //eslint-disable-line
+};
+
 // Only for static generated websites
 function chooseVariant(experiment) {
   const localStorageKey = `experiment-${experiment.id}`;
@@ -41,6 +46,11 @@ export default ({ store }) => {
 
     // Send data to Google
     window.ga('set', 'exp', `${experiment.id}.${experiment.index}`);
+
+    // Tag HotJar recordings.
+    window.hj('tagRecording', `${experiment.id}.${experiment.index}`);
+    // Heatmap
+    window.hj('trigger', `${experiment.id}.${experiment.index}`);
   });
 };
 
