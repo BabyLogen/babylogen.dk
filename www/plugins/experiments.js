@@ -48,9 +48,9 @@ export default ({ store }) => {
     window.ga('set', 'exp', `${experiment.id}.${experiment.index}`);
 
     // Tag HotJar recordings.
-    window.hj('tagRecording', `${experiment.id}.${experiment.index}`);
+    window.hj('tagRecording', `${experiment.id}_${experiment.index}`);
     // Heatmap
-    window.hj('trigger', `${experiment.id}.${experiment.index}`);
+    window.hj('trigger', `${experiment.id}_${experiment.index}`);
   });
 };
 
