@@ -84,10 +84,14 @@ export default {
     return fetchService({ id, store, error });
   },
   mounted() {
-    if (window.hj) {
-      const experiment = this.$store.state.experiments.contentBoxButtonType;
-      window.hj('trigger', `${experiment.id}_${experiment.index}`);
-    }
+    // Setup Hotjar
+    window.hj = window.hj || function hj() {
+      (window.hj.q = window.hj.q || []).push(arguments); //eslint-disable-line
+    };
+
+    // Trigger screenshot
+    const experiment = this.$store.state.experiments.contentBoxButtonType;
+    window.hj('trigger', `${experiment.id}_${experiment.index}`);
   },
 };
 </script>
