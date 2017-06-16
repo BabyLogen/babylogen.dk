@@ -6,6 +6,7 @@ export function state() {
     navigation: [],
     services: [],
     events: [],
+    blogposts: [],
   };
 }
 
@@ -18,6 +19,9 @@ export const mutations = {
   },
   addEvent(currentState, event) {
     currentState.events.push(event);
+  },
+  addBlogpost(currentState, blogpost) {
+    currentState.blogposts.push(blogpost);
   },
   addNavigation(currentState, navigation) {
     currentState.navigation = navigation;
@@ -79,6 +83,21 @@ export const actions = {
               commit('addEvent', {
                 id: item.sys.id,
                 path: item.fields.path,
+              });
+            });
+          })
+      ))
+
+      // Blogposts
+      .then(() => (
+        contentfulClient
+          .getEntries({ content_type: 'blogpost', include: 0 })
+          .then((response) => {
+            if (response.items.length === 0) { return; }
+            response.items.forEach((item) => {
+              commit('addBlogpost', {
+                id: item.sys.id,
+                path: item.fields.urlPath,
               });
             });
           })

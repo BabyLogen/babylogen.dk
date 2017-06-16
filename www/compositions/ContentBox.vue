@@ -109,6 +109,22 @@ export default {
           },
         };
       }
+      if (this.width === 'text') {
+        grid = {
+          padding: {
+            xs: '0',
+            sm: '1',
+            md: '2',
+            lg: '3',
+          },
+          content: {
+            xs: '12',
+            sm: '10',
+            md: '8',
+            lg: '6',
+          },
+        };
+      }
       return grid;
     },
   },
@@ -166,6 +182,10 @@ export default {
 
   .ContentBox p {
     margin-bottom: 2rem;
+  }
+
+  .ContentBox img {
+    max-width: 100%;
   }
 
   .ContentBox-header {
