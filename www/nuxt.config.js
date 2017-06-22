@@ -80,6 +80,12 @@ module.exports = {
           response.items.forEach(item => routes.push(`/events/${item.fields.path}/`))
         ))
 
+        // Blogposts
+        .then(() => contentfulClient.getEntries({ content_type: 'blogpost' }))
+        .then(response => (
+          response.items.forEach(item => routes.push(`/blog/${item.fields.urlPath}/`))
+        ))
+
         .then(() => routes);
       return Promise.resolve(promise);
     },
