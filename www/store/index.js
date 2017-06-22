@@ -98,6 +98,7 @@ export const actions = {
               commit('addBlogpost', {
                 id: item.sys.id,
                 path: item.fields.urlPath,
+                titel: item.fields.titel,
               });
             });
           })

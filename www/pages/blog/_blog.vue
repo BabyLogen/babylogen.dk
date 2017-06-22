@@ -35,7 +35,7 @@ export default {
               },
             }, {
               sys: {
-                id: 'cta',
+                id: 'body',
                 contentType: { sys: { id: 'contentBox' } },
               },
               fields: {

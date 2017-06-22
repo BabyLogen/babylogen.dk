@@ -1,5 +1,5 @@
 <template>
-  <Page :page="page" />
+  <Page :page="mappedPage" />
 </template>
 
 <script>
@@ -13,7 +13,33 @@ export default {
   components: {
     Page,
   },
-  computed: mapState(['meta', 'page']),
+  computed: {
+    ...mapState(['meta', 'page']),
+    mappedPage() {
+      const sections = this.page.fields.sections;
+      sections.push({
+        sys: {
+          id: 'blogpost-links',
+          contentType: { sys: { id: 'contentBox' } },
+        },
+        fields: {
+          body: this.$store.state.blogposts.map(b => (
+            `**[${b.titel}](/blog/${b.path}/)**`
+          )).join(`
+
+`),
+          width: 'text',
+          theme: 'dark',
+          header: 'Blogposts',
+        },
+      });
+      return {
+        fields: {
+          sections,
+        },
+      };
+    },
+  },
   head: headPage,
   fetch({ store, error }) {
     const { id } = find(store.state.pages, { path: 'blog' });

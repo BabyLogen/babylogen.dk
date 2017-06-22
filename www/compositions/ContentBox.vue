@@ -15,6 +15,7 @@
       <div class="ContentBox-content" :class="[
         `ContentBox-content--spacing-${spacing}`,
         `ContentBox-content--align-${align}`,
+        `ContentBox-content--width-${width}`,
       ]">
         <h2 v-if="header" class="ContentBox-header">{{header}}</h2>
         <div v-if="body" v-html="htmlBody"/>
@@ -48,7 +49,7 @@ export default {
     width: {
       type: String,
       default: 'wide',
-      validator(v) { return ['wide', 'narrow'].some(width => width === v); },
+      validator(v) { return ['wide', 'narrow', 'text'].some(width => width === v); },
     },
     spacing: {
       type: String,
@@ -178,6 +179,10 @@ export default {
   .ContentBox-content--spacing-little {
     padding-top: 2.5rem;
     padding-bottom: 0.5rem;
+  }
+  .ContentBox-content--width-text {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .ContentBox p {
