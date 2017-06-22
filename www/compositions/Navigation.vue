@@ -10,7 +10,7 @@
           to="/"
           class="Navigation-logo"
         >
-          BabyLogen
+          BabyTeamet
         </nav-link>
       </grid-column>
       <grid-column xs="fit" class="Navigation-links">
