@@ -1,9 +1,16 @@
 <template>
-  <nuxt-link v-bind:to="to" class="CustomButton" :class="[
-    `CustomButton--${type}`,
-  ]">
-    <slot></slot>
-  </nuxt-link>
+  <span>
+    <nuxt-link v-if="to.indexOf('http') !== 0" :to="to" class="CustomButton" :class="[
+      `CustomButton--${type}`,
+    ]">
+      <slot></slot>
+    </nuxt-link>
+    <a v-if="to.indexOf('http') === 0" :href="to" class="CustomButton" :class="[
+      `CustomButton--${type}`,
+    ]">
+      <slot></slot>
+    </a>
+  </span>
 </template>
 
 <script>
