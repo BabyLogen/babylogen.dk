@@ -62,7 +62,7 @@ export default {
                   align: 'center',
                   header: this.page.fields.price,
                   buttonText: 'Book nu',
-                  buttonLink: { fields: { path: '#' } },
+                  buttonLink: { fields: { path: this.page.fields.bookLink } },
                 },
               }] },
             }] },
