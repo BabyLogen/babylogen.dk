@@ -5,7 +5,7 @@ export default function fetchCommingEvents() {
     .getEntries({
       content_type: 'event',
       order: 'fields.startDate',
-      limit: 7,
+      limit: 8,
       'fields.startDate[gte]': new Date(),
     })
     .then(response => response.items);

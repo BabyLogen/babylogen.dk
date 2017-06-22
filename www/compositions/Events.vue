@@ -16,19 +16,6 @@
     >
       <event v-bind="event.fields" />
     </grid-column>
-    <grid-column
-      xs="12"
-      sm="6"
-      md="4"
-      lg="3"
-      class="Events-item Events-item--cta"
-    >
-      <div>
-        <custom-button :to="`/${buttonLink.fields.path}/`" width="auto">
-          {{buttonText}}
-        </custom-button>
-      </div>
-    </grid-column>
   </grid-container>
 </template>
 
