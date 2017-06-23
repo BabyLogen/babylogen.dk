@@ -1,4 +1,12 @@
+function placeholder(len) {
+  return Array(len).join('█');
+}
+
 export default function getInterval(inputStartDate, inputEndDate) {
+  if (!inputStartDate || !inputEndDate) {
+    return `${placeholder(2)}:${placeholder(2)} - ${placeholder(2)}:${placeholder(2)}`;
+  }
+
   const startDate = new Date(inputStartDate);
   const endDate = new Date(inputEndDate);
 

@@ -11,7 +11,7 @@
       md="4"
       lg="3"
       class="Events-item"
-      :key="event.sys.id"
+      :key="event.sys ? event.sys.id : Math.random()"
       :class="`Events-item--col-${index % 4}`"
     >
       <event v-bind="event.fields" />
@@ -41,7 +41,7 @@ export default {
   },
   data() {
     return {
-      events: [],
+      events: [{}, {}, {}, {}, {}, {}, {}, {}],
     };
   },
   created() {

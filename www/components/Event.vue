@@ -3,11 +3,11 @@
     <grid-container class="Event-container">
       <grid-column xs="3" sm="12" class="Event-column">
         <div class="Event-image"
-        :style="{ 'background-image': `url(${image.fields.file.url}?fm=jpg&fl=progressive&w=735)` }"/>
+        :style="{ 'background-image': `url(${image ? image.fields.file.url: ''}?fm=jpg&fl=progressive&w=735)` }"/>
       </grid-column>
       <grid-column xs="9" sm="12" class="Event-column">
         <div class="Event-content">
-          <h3>{{header}}</h3>
+          <h3>{{header || Array(10).join('█')}}</h3>
           <p>{{date}}</p>
           <p>{{time}}</p>
         </div>
@@ -69,6 +69,7 @@ export default {
     background-position: center;
     background-size: cover;
     padding-top: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
   }
   .Event-content {
     padding: 1rem 1rem 3rem;

@@ -86,7 +86,7 @@ export default {
     padding-bottom: 13px;
     transform: translateZ(0);
     transition: padding 0.25s cubic-bezier(.5,0,.1,1);
-    z-index: 100;
+    z-index: 10;
   }
 
   .Navigation-logo {
