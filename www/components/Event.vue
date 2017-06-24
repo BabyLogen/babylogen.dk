@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="`/events/${path}/`" class="Event">
+  <nuxt-link :to="`events/${path}`" class="Event">
     <grid-container class="Event-container">
       <grid-column xs="3" sm="12" class="Event-column">
         <div class="Event-image"
