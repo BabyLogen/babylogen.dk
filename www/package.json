@@ -27,11 +27,11 @@
   },
   "devDependencies": {
     "babel-eslint": "latest",
-    "eslint": "latest",
+    "eslint": "^4.1.1",
     "eslint-config-airbnb-base": "latest",
-    "eslint-loader": "latest",
+    "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "latest",
-    "eslint-plugin-import": "latest",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-promise": "latest"
   }
 }
