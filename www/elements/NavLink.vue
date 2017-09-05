@@ -14,8 +14,6 @@ export default {
 </script>
 
 <style>
-  @import "../assets/css/variables.css";
-  
   .Nav-link {
     color: var(--color-black);
     text-decoration: none;

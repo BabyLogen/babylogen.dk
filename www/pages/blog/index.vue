@@ -16,7 +16,7 @@ export default {
   computed: {
     ...mapState(['meta', 'page']),
     mappedPage() {
-      const { sections } = this.page.fields;
+      const sections = this.page.fields.sections;
       sections.push({
         sys: {
           id: 'blogpost-links',

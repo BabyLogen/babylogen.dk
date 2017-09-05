@@ -57,8 +57,6 @@ export default {
 </script>
 
 <style>
-  @import "../assets/css/variables.css";
-  
   .Services-header {
     font-size: 2rem;
     font-weight: 300;

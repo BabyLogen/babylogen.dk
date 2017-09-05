@@ -18,7 +18,7 @@ export default {
   computed: {
     ...mapState(['meta', 'page']),
     experiments() {
-      const { experiments } = this.$store.state;
+      const experiments = this.$store.state.experiments;
       return {
         buttonType: experiments.contentBoxButtonType.variants[
           experiments.contentBoxButtonType.index
@@ -30,53 +30,49 @@ export default {
         fields: {
           sections: [{
             sys: { contentType: { sys: { id: 'combinedModules' } } },
-            fields: {
-              modules: [{
+            fields: { modules: [{
+              sys: {
+                id: 'mainContent',
+                contentType: { sys: { id: 'contentBox' } },
+              },
+              fields: {
+                theme: 'primary',
+                header: this.page.fields.header,
+                body: this.page.fields.summary,
+                align: 'center',
+                spacing: 'little',
+              },
+            }, {
+              sys: {
+                id: 'image',
+                contentType: { sys: { id: 'imageBox' } },
+              },
+              fields: { image: this.page.fields.image },
+            }, {
+              sys: { contentType: { sys: { id: 'splits' } } },
+              fields: { modules: [{
                 sys: {
-                  id: 'mainContent',
+                  id: 'description',
                   contentType: { sys: { id: 'contentBox' } },
                 },
                 fields: {
-                  theme: 'primary',
-                  header: this.page.fields.header,
-                  body: this.page.fields.summary,
-                  align: 'center',
-                  spacing: 'little',
+                  body: this.page.fields.description,
                 },
               }, {
                 sys: {
-                  id: 'image',
-                  contentType: { sys: { id: 'imageBox' } },
+                  id: 'cta',
+                  contentType: { sys: { id: 'contentBox' } },
                 },
-                fields: { image: this.page.fields.image },
-              }, {
-                sys: { contentType: { sys: { id: 'splits' } } },
                 fields: {
-                  modules: [{
-                    sys: {
-                      id: 'description',
-                      contentType: { sys: { id: 'contentBox' } },
-                    },
-                    fields: {
-                      body: this.page.fields.description,
-                    },
-                  }, {
-                    sys: {
-                      id: 'cta',
-                      contentType: { sys: { id: 'contentBox' } },
-                    },
-                    fields: {
-                      theme: 'dark',
-                      align: 'center',
-                      header: this.page.fields.price,
-                      buttonText: 'Book nu',
-                      buttonLink: { fields: { path: this.page.fields.bookLink } },
-                      buttonType: this.experiments.buttonType,
-                    },
-                  }],
+                  theme: 'dark',
+                  align: 'center',
+                  header: this.page.fields.price,
+                  buttonText: 'Book nu',
+                  buttonLink: { fields: { path: this.page.fields.bookLink } },
+                  buttonType: this.experiments.buttonType,
                 },
-              }],
-            },
+              }] },
+            }] },
           }],
         },
       };

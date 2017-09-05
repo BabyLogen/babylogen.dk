@@ -48,8 +48,6 @@ export default {
 </script>
 
 <style>
-  @import "../assets/css/variables.css";
-  
   .Event {
     display: block;
     color: var(--color-black);
