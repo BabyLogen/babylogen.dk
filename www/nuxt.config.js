@@ -56,7 +56,7 @@ module.exports = {
   ],
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
-    // { src: '~/plugins/experiments', ssr: false },
+    { src: '~/plugins/experiments', ssr: false },
   ],
   generate: {
     routes() {
