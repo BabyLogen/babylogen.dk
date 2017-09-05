@@ -48,6 +48,8 @@ export default {
 </script>
 
 <style>
+  @import "../assets/css/variables.css";
+  
   .Banner-image {
     background-repeat: no-repeat;
     background-position: center;

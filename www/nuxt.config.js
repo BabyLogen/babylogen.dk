@@ -19,7 +19,7 @@ module.exports = {
   ** Global css
   */
   css: [
-    '~assets/css/main.css',
+    '@/assets/css/main.css',
   ],
   /*
   ** Customize the progress-bar color
@@ -56,7 +56,7 @@ module.exports = {
   ],
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
-    { src: '~/plugins/experiments', ssr: false },
+    // { src: '~/plugins/experiments', ssr: false },
   ],
   generate: {
     routes() {

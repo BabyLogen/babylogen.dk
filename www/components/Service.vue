@@ -37,6 +37,8 @@ export default {
 </script>
 
 <style>
+  @import "../assets/css/variables.css";
+
   .Service {
     display: block;
     color: var(--color-black);

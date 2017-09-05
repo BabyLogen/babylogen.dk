@@ -76,6 +76,8 @@ export default {
 </script>
 
 <style>
+  @import "../assets/css/variables.css";
+
   .Navigation {
     position: fixed;
     top: 0;

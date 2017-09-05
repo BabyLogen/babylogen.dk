@@ -14,6 +14,8 @@ export default {
 </script>
 
 <style>
+  @import "../assets/css/variables.css";
+  
   .SocialMediaLink {
     display: flex;
     justify-content: center;

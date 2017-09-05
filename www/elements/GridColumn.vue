@@ -11,7 +11,7 @@ function validate({ min = 1, max = 12, exceptions = [] }) {
       return true;
     }
     const i = parseInt(v, 10);
-    return !isNaN(i) && v >= min && v <= max;
+    return !Number.isNaN(i) && v >= min && v <= max;
   };
 }
 

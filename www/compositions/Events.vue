@@ -53,6 +53,8 @@ export default {
 </script>
 
 <style>
+  @import "../assets/css/variables.css";
+  
   .Events-header {
     font-size: 2rem;
     font-weight: 300;
