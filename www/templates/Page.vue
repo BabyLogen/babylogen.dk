@@ -73,6 +73,8 @@ export default {
 </script>
 
 <style>
+
+  @import '../assets/css/variables.css';
   .Page-section {
     margin-bottom: 1rem;
   }

@@ -24,6 +24,7 @@ export default {
 </script>
 
 <style>
+  @import '../assets/css/variables.css';
   .Grid-container {
     /*padding-left: 1rem;
     padding-right: 1rem;*/

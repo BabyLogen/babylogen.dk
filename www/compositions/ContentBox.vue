@@ -133,6 +133,7 @@ export default {
 </script>
 
 <style>
+  @import '../assets/css/variables.css';
 
   .ContentBox a {
     color: var(--color-black);

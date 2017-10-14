@@ -32,6 +32,7 @@ export default {
 </script>
 
 <style>
+  @import '../assets/css/variables.css';
   .Image-container {
     padding-bottom: 35%;
     background-repeat: no-repeat;

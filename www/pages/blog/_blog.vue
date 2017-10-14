@@ -22,27 +22,29 @@ export default {
         fields: {
           sections: [{
             sys: { contentType: { sys: { id: 'combinedModules' } } },
-            fields: { modules: [{
-              sys: {
-                id: 'mainContent',
-                contentType: { sys: { id: 'contentBox' } },
-              },
-              fields: {
-                theme: 'primary',
-                header: this.page.fields.titel,
-                align: 'center',
-                spacing: 'little',
-              },
-            }, {
-              sys: {
-                id: 'body',
-                contentType: { sys: { id: 'contentBox' } },
-              },
-              fields: {
-                body: this.page.fields.body,
-                width: 'text',
-              },
-            }] },
+            fields: {
+              modules: [{
+                sys: {
+                  id: 'mainContent',
+                  contentType: { sys: { id: 'contentBox' } },
+                },
+                fields: {
+                  theme: 'primary',
+                  header: this.page.fields.titel,
+                  align: 'center',
+                  spacing: 'little',
+                },
+              }, {
+                sys: {
+                  id: 'body',
+                  contentType: { sys: { id: 'contentBox' } },
+                },
+                fields: {
+                  body: this.page.fields.body,
+                  width: 'text',
+                },
+              }],
+            },
           }],
         },
       };

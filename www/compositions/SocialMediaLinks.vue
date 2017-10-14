@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style>
+  @import '../assets/css/variables.css';
   .SocialMediaLinks-header {
     font-size: 2rem;
     font-weight: 300;

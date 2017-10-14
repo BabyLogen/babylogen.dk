@@ -17,9 +17,9 @@
         <template v-for="link in navigation">
           <nav-link v-on:click.native="closeNavigation" :to="link.path" class="Navigation-link">{{link.title}}</nav-link>
         </template>
-        <!--<nav-link v-on:click.native="closeNavigation" to="/kurv/" class="Navigation-basket">
-          <span>Kurv (0)</span>
-        </nav-link>-->
+        <a v-on:click="closeNavigation" target="_blank" href="https://system.easypractice.net/book/jordemoderkonsultation" class="Nav-link Navigation-basket">
+          <span>Book nu</span>
+        </a>
         <nav-link v-on:click.native="toggleNavigation" class="Navigation-menu">
           <span>{{open ? 'Luk' : 'Menu'}}</span>
         </nav-link>
@@ -28,11 +28,11 @@
         <template v-for="link in navigation">
           <div class="Navigation-mobile-link"><nav-link v-on:click.native="closeNavigation" :to="link.path">{{ link.title }}</nav-link></div>
         </template>
-        <!--<div class="Navigation-mobile-link Navigation-mobile-link--basket">
-          <nav-link v-on:click.native="closeNavigation" to="/kurv/">
-            <span>Kurv (0)</span>
-          </nav-link>
-        </div>-->
+        <div class="Navigation-mobile-link Navigation-mobile-link--basket">
+          <a target="_blank" v-on:click="closeNavigation" href="https://system.easypractice.net/book/jordemoderkonsultation" class="Nav-link">
+            <span>Book nu</span>
+          </a>
+        </div>
       </grid-column>
     </grid-container>
   </div>
@@ -76,6 +76,7 @@ export default {
 </script>
 
 <style>
+  @import '../assets/css/variables.css';
   .Navigation {
     position: fixed;
     top: 0;
@@ -86,7 +87,7 @@ export default {
     padding-bottom: 13px;
     transform: translateZ(0);
     transition: padding 0.25s cubic-bezier(.5,0,.1,1);
-    z-index: 10;
+    z-index: 10000;
   }
 
   .Navigation-logo {

@@ -11,7 +11,7 @@ function validate({ min = 1, max = 12, exceptions = [] }) {
       return true;
     }
     const i = parseInt(v, 10);
-    return !isNaN(i) && v >= min && v <= max;
+    return !Number.isNaN(i) && v >= min && v <= max;
   };
 }
 
@@ -95,6 +95,8 @@ export default {
 </script>
 
 <style>
+@import '../assets/css/variables.css';
+
 .GridColumn {
   padding-left: 0.5rem;
   padding-right: 0.5rem;

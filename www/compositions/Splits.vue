@@ -41,6 +41,7 @@ export default {
 </script>
 
 <style>
+  @import '../assets/css/variables.css';
   .Splits-item {
     padding-left: 0;
     padding-right: 0;

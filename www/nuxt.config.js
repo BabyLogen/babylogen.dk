@@ -19,7 +19,7 @@ module.exports = {
   ** Global css
   */
   css: [
-    '~assets/css/main.css',
+    '@/assets/css/main.css',
   ],
   /*
   ** Customize the progress-bar color

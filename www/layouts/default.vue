@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style>
+  @import '../assets/css/variables.css';
   .Page { padding-top: 3rem; }
 
   @media (min-width: 768px) {

@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style>
+  @import '../assets/css/variables.css';
   .CustomButton {
     display: inline-block;
     text-decoration: none;
