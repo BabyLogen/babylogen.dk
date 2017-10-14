@@ -41,6 +41,11 @@
         v-bind="section.fields"
         class="Page-section"
       />
+      <newsletter-signup
+        v-if="section.sys.contentType.sys.id === 'newsletterSignup'"
+        v-bind="section.fields"
+        class="Page-section"
+      />
     </section>
   </div>
 </template>
@@ -54,6 +59,7 @@ import SocialMediaLinks from '../compositions/SocialMediaLinks.vue';
 import CombinedModules from '../compositions/CombinedModules.vue';
 import Splits from '../compositions/Splits.vue';
 import ImageBox from '../components/ImageBox.vue';
+import NewsletterSignup from '../compositions/NewsletterSignup.vue';
 
 export default {
   components: {
@@ -65,6 +71,7 @@ export default {
     CombinedModules,
     ImageBox,
     Splits,
+    NewsletterSignup,
   },
   props: {
     page: { type: Object },
