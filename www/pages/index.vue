@@ -19,6 +19,10 @@ export default {
     const { id } = find(store.state.pages, { path: 'forside' });
     return fetchPage({ id, store, error });
   },
+  mounted() {
+    const initPos = (window.pageYOffset > (144 - 50)) ? (144 - 49) : 0;
+    window.scrollTo(0, initPos);
+  },
 };
 </script>
 

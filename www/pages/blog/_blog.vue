@@ -55,6 +55,10 @@ export default {
     const { id } = find(store.state.blogposts, { path: params.blog });
     return fetchBlog({ id, store, error });
   },
+  mounted() {
+    const initPos = (window.pageYOffset > (144 - 50)) ? (144 - 49) : 0;
+    window.scrollTo(0, initPos);
+  },
 };
 </script>
 

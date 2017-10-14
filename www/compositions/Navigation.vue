@@ -1,7 +1,7 @@
 <template>
   <div
     class="Navigation"
-    :class="{ 'Navigation--collapsed': scrollPosition > 144 }"
+    :class="{ 'Navigation--collapsed': scrollPosition > (144-50) }"
   >
     <grid-container align="middle">
       <grid-column xs="expand">
@@ -70,7 +70,7 @@ export default {
   },
   mounted() {
     this.updateScroll();
-    window.addEventListener('scroll', this.updateScroll);
+    window.addEventListener('scroll', this.updateScroll, { passive: true });
   },
 };
 </script>

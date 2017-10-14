@@ -17,14 +17,6 @@ export default {
   },
   computed: {
     ...mapState(['meta', 'page']),
-    experiments() {
-      const { experiments } = this.$store.state;
-      return {
-        buttonType: experiments.contentBoxButtonType.variants[
-          experiments.contentBoxButtonType.index
-        ],
-      };
-    },
     mappedPage() {
       return {
         fields: {
@@ -71,7 +63,7 @@ export default {
                       header: this.page.fields.price,
                       buttonText: 'Book nu',
                       buttonLink: { fields: { path: this.page.fields.bookLink } },
-                      buttonType: this.experiments.buttonType,
+                      buttonType: 'ghost-primary',
                     },
                   }],
                 },
@@ -88,14 +80,8 @@ export default {
     return fetchService({ id, store, error });
   },
   mounted() {
-    // Setup Hotjar
-    window.hj = window.hj || function hj() {
-      (window.hj.q = window.hj.q || []).push(arguments); //eslint-disable-line
-    };
-
-    // Trigger screenshot
-    const experiment = this.$store.state.experiments.contentBoxButtonType;
-    window.hj('trigger', `${experiment.id}_${experiment.index}`);
+    const initPos = (window.pageYOffset > (144 - 50)) ? (144 - 49) : 0;
+    window.scrollTo(0, initPos);
   },
 };
 </script>

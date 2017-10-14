@@ -80,6 +80,10 @@ export default {
     const { id } = find(store.state.events, { path: params.event });
     return fetchEvent({ id, store, error });
   },
+  mounted() {
+    const initPos = (window.pageYOffset > (144 - 50)) ? (144 - 49) : 0;
+    window.scrollTo(0, initPos);
+  },
 };
 </script>
 

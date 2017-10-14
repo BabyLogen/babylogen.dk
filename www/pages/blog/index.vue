@@ -16,7 +16,7 @@ export default {
   computed: {
     ...mapState(['meta', 'page']),
     mappedPage() {
-      const { sections } = this.page.fields;
+      const sections = [...this.page.fields.sections];
       sections.push({
         sys: {
           id: 'blogpost-links',
@@ -44,6 +44,10 @@ export default {
   fetch({ store, error }) {
     const { id } = find(store.state.pages, { path: 'blog' });
     return fetchPage({ id, store, error });
+  },
+  mounted() {
+    const initPos = (window.pageYOffset > (144 - 50)) ? (144 - 49) : 0;
+    window.scrollTo(0, initPos);
   },
 };
 </script>

@@ -28,6 +28,14 @@ module.exports = {
   /*
   ** Build configuration
   */
+  router: {
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition;
+      }
+      return false;
+    },
+  },
   build: {
     /*
     ** Run ESLINT on save
@@ -56,7 +64,6 @@ module.exports = {
   ],
   plugins: [
     { src: '~/plugins/detect-touch', ssr: false },
-    { src: '~/plugins/experiments', ssr: false },
   ],
   generate: {
     routes() {
