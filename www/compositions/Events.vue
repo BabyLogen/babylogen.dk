@@ -16,6 +16,20 @@
     >
       <event v-bind="event.fields" />
     </grid-column>
+    <grid-column
+      xs="12"
+      sm="6"
+      md="4"
+      lg="3"
+      class="Events-item Events-item--cta"
+      v-if="buttonLink && buttonText && limit == 7"
+    >
+      <div>
+        <custom-button :to="`/${buttonLink.fields.path}/`" width="auto">
+          {{buttonText}}
+        </custom-button>
+      </div>
+    </grid-column>
   </grid-container>
 </template>
 
@@ -38,6 +52,10 @@ export default {
     description: String,
     buttonText: String,
     buttonLink: Object,
+    limit: {
+      type: Number,
+      default: 7,
+    },
   },
   data() {
     return {
@@ -45,7 +63,7 @@ export default {
     };
   },
   created() {
-    return fetchCommingEvents().then((events) => {
+    return fetchCommingEvents(this.limit).then((events) => {
       this.events = events;
     });
   },

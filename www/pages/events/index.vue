@@ -16,7 +16,7 @@ export default {
   computed: mapState(['meta', 'page']),
   head: headPage,
   fetch({ store, error }) {
-    const { id } = find(store.state.pages, { path: 'vi-tilbyder' });
+    const { id } = find(store.state.pages, { path: 'events' });
     return fetchPage({ id, store, error });
   },
   mounted() {
