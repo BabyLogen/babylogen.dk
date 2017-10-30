@@ -40,6 +40,12 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
+    vendor: [
+      'contentful',
+      'lodash/find',
+      'marked',
+      './elements/GridColumn.vue',
+    ],
     extend(config, ctx) {
       if (ctx.isClient) {
         config.module.rules.push({
@@ -56,7 +62,6 @@ module.exports = {
     description: 'Få kompetent og ærlig vejledning af specialister før, under og efter graviditeten.',
     theme_color: '#7DFAD3',
   },
-  vendor: ['contentful', 'lodash/find', 'marked'],
   modules: [
     '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', { ua: 'UA-101008422-1' }],

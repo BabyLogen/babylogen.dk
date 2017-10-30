@@ -51,27 +51,18 @@
 </template>
 
 <script>
-import Banner from '../compositions/Banner.vue';
-import ContentBox from '../compositions/ContentBox.vue';
-import Services from '../compositions/Services.vue';
-import Events from '../compositions/Events.vue';
-import SocialMediaLinks from '../compositions/SocialMediaLinks.vue';
-import CombinedModules from '../compositions/CombinedModules.vue';
-import Splits from '../compositions/Splits.vue';
-import ImageBox from '../components/ImageBox.vue';
-import NewsletterSignup from '../compositions/NewsletterSignup.vue';
 
 export default {
   components: {
-    Banner,
-    ContentBox,
-    Services,
-    Events,
-    SocialMediaLinks,
-    CombinedModules,
-    ImageBox,
-    Splits,
-    NewsletterSignup,
+    Banner: () => import('../compositions/Banner.vue'),
+    ContentBox: () => import('../compositions/ContentBox.vue'),
+    Services: () => import('../compositions/Services.vue'),
+    Events: () => import('../compositions/Events.vue'),
+    SocialMediaLinks: () => import('../compositions/SocialMediaLinks.vue'),
+    CombinedModules: () => import('../compositions/CombinedModules.vue'),
+    ImageBox: () => import('../components/ImageBox.vue'),
+    Splits: () => import('../compositions/Splits.vue'),
+    NewsletterSignup: () => import('../compositions/NewsletterSignup.vue'),
   },
   props: {
     page: { type: Object },
