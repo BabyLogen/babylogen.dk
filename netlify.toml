@@ -1,0 +1,6 @@
+[build]
+  base    = "www"
+  command = "npm run generate && npm run deploy"
+
+[environment]
+  NODE_ENV="production"
