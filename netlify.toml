@@ -1,6 +1,7 @@
 [build]
   base    = "www"
-  command = "npm run generate && npm run deploy"
+  publish = "dist"
+  command = "npm run generate"
 
 [environment]
   NODE_ENV="production"
