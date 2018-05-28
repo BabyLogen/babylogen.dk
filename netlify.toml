@@ -1,6 +1,6 @@
 [build]
   base    = "www"
-  publish = "dist"
+  publish = "www/dist"
   command = "npm run generate"
 
 [environment]
