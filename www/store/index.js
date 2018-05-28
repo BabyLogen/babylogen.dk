@@ -31,7 +31,12 @@ export const mutations = {
 export const actions = {
   nuxtServerInit({ commit }) {
     // Pages
-    const promise = contentfulClient.getEntries({ content_type: 'page', include: 0 }).then((response) => {
+    const promise = contentfulClient.getEntries({
+      content_type: 'page',
+      include: 0,
+      limit: 1000,
+      order: '-sys.createdAt',
+    }).then((response) => {
       if (response.items.length === 0) { return; }
       response.items.forEach((item) => {
         commit('addPage', {
@@ -61,7 +66,13 @@ export const actions = {
       // Services
       .then(() => (
         contentfulClient
-          .getEntries({ content_type: 'service', include: 0 })
+          .getEntries({
+            content_type: 'service',
+            include: 0,
+            limit: 1000,
+
+            order: '-sys.createdAt',
+          })
           .then((response) => {
             if (response.items.length === 0) { return; }
             response.items.forEach((item) => {
@@ -76,7 +87,13 @@ export const actions = {
       // Events
       .then(() => (
         contentfulClient
-          .getEntries({ content_type: 'event', include: 0 })
+          .getEntries({
+            content_type: 'event',
+            include: 0,
+            limit: 1000,
+
+            order: '-sys.createdAt',
+          })
           .then((response) => {
             if (response.items.length === 0) { return; }
             response.items.forEach((item) => {
@@ -91,7 +108,13 @@ export const actions = {
       // Blogposts
       .then(() => (
         contentfulClient
-          .getEntries({ content_type: 'blogpost', include: 0 })
+          .getEntries({
+            content_type: 'blogpost',
+            include: 0,
+            limit: 1000,
+
+            order: '-sys.createdAt',
+          })
           .then((response) => {
             if (response.items.length === 0) { return; }
             response.items.forEach((item) => {
