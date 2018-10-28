@@ -7,8 +7,8 @@ export default function getInterval(inputStartDate, inputEndDate) {
     return `${placeholder(2)}:${placeholder(2)} - ${placeholder(2)}:${placeholder(2)}`;
   }
 
-  const startDate = new Date(`${inputStartDate}+02:00`);
-  const endDate = new Date(`${inputEndDate}+02:00`);
+  const startDate = new Date(`${inputStartDate}+01:00`);
+  const endDate = new Date(`${inputEndDate}+01:00`);
 
   const startHours = `${(startDate.getHours() < 10) ? '0' : ''}${startDate.getHours()}`;
   const startMinutes = `${(startDate.getMinutes() < 10) ? '0' : ''}${startDate.getMinutes()}`;
